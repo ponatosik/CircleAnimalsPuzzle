@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1402280616026695660}
   - component: {fileID: 2812518434076398618}
   - component: {fileID: 2724209792162241511}
+  - component: {fileID: 4291835786085379043}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -177,6 +178,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trajectoryLine: {fileID: 6306416116582422820}
   _fixedFramesBetweenPoints: 3
+--- !u!114 &4291835786085379043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816191527569258403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9d201730335544d853d7733c938323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7123670685053395979
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,8 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DestroyOnTouch : MonoBehaviour
 {
-	private void OnTriggerEnter2D(Collider2D collision)
+	private bool _isActive;
+
+	void Start()
 	{
-		Destroy(gameObject);
+		_isActive = gameObject.activeSelf;
+		LevelManager.OnLevelStarted += () => gameObject.SetActive(true);
+	}
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		gameObject.SetActive(false);
 	}
 }

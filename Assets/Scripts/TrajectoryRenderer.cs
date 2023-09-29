@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -40,15 +37,15 @@ public class TrajectoryRenderer : MonoBehaviour
 		_trajectoryLine.SetPosition(_trajectoryLine.positionCount - 1, new Vector3(point.x, point.y, _trajectoryLineZPos));
 	}
 
-	void Awake()
+	void Start()
 	{
-		ResetTrajectory();
+		LevelManager.OnLevelStarted += ResetTrajectory;
 	}
 
 	void FixedUpdate()
     {
 		_fixedFramesCount++;
-		if (_fixedFramesCount >= _fixedFramesBetweenPoints) 
+		if (_fixedFramesCount >= _fixedFramesBetweenPoints && LevelManager.LevelStarted) 
 		{
 			AddTrajectoryPoint(transform.position);
 			_fixedFramesCount = 0;

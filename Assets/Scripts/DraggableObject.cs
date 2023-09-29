@@ -7,16 +7,25 @@ public class DraggableObject : MonoBehaviour
 	Vector3 _draggPosOffset;
 	float _objectZPos;
 
-
-	private void OnMouseDown()
+	void OnMouseDown()
 	{
+		if (LevelManager.LevelStarted) 
+		{
+			return;
+		}
+
 		Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		_draggPosOffset = mouseWorldPos - (Vector2)transform.position;
 		_objectZPos = transform.position.z;
 	}
 
-	private void OnMouseDrag()
+	void OnMouseDrag()
 	{
+		if (LevelManager.LevelStarted)
+		{
+			return;
+		}
+
 		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		mouseWorldPos.z = _objectZPos;
 		mouseWorldPos -= _draggPosOffset;
