@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1257119549878836819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7208775143494969024, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: _randomizeSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537239320295089, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 23c2334fa6403f54cad4dda64b289194, type: 3}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      propertyPath: m_Name
+      value: Super bouncy mushroom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 8875537239008566159, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4430681927085837444}
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7217570672060681799}
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7773117041857043671}
+  m_SourcePrefab: {fileID: 100100000, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+--- !u!1 &7664582898267705496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+  m_PrefabInstance: {fileID: 1257119549878836819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &4430681927085837444
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664582898267705496}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 2c1e3ef664c2295439024000bf084467, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.41682336}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8403657}
+  m_EdgeRadius: 0
+--- !u!114 &7217570672060681799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664582898267705496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f1b811a969b384f8be967acd9a2e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7773117041857043671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664582898267705496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
