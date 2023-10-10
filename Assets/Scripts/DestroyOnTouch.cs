@@ -10,11 +10,21 @@ public class DestroyOnTouch : MonoBehaviour
 	void Start()
 	{
 		_isActive = gameObject.activeSelf;
-		LevelManager.OnLevelStarted += () => gameObject.SetActive(true);
+		LevelManager.OnLevelStarted += SetActive;
+	}
+
+	private void OnDestroy()
+	{
+		LevelManager.OnLevelStarted -= SetActive;
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		gameObject.SetActive(false);
+	}
+
+	private void SetActive() 
+	{
+		gameObject.SetActive(true);
 	}
 }

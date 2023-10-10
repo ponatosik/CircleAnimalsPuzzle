@@ -16,17 +16,30 @@ public class SimulateOnStart : MonoBehaviour
 		_angularVelocity = _rigidbody.angularVelocity;
 	}
 
+	private void OnDestroy()
+	{
+		LevelManager.OnLevelStarted -= StartSimulating;
+		LevelManager.OnLevelStopped -= StopSimulating;
+	}
+
 	void Start()
     {
         _rigidbody.simulated = LevelManager.LevelStarted;
 
-        LevelManager.OnLevelStarted += () => _rigidbody.simulated = true;
-		LevelManager.OnLevelStopped += () =>
-		{
-			transform.position = _position;
-			_rigidbody.velocity = _velocity;
-			_rigidbody.angularVelocity = _angularVelocity;
-			_rigidbody.simulated = false;
-		};
+        LevelManager.OnLevelStarted += StartSimulating;
+		LevelManager.OnLevelStopped += StopSimulating;
+	}
+
+	private void StartSimulating()
+	{
+		_rigidbody.simulated = true;
+	}
+
+	private void StopSimulating()
+	{
+		transform.position = _position;
+		_rigidbody.velocity = _velocity;
+		_rigidbody.angularVelocity = _angularVelocity;
+		_rigidbody.simulated = false;
 	}
 }

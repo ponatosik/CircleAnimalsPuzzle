@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class LevelManager : MonoBehaviour
 	{
 		if (Instance != null)
 		{
-			Debug.LogWarning($"Attempt to create second instance of {nameof(LevelManager)}");
-			Destroy(this);
+			Debug.Log($"Attempt to create second instance of {nameof(LevelManager)}");
+			Destroy(gameObject);
 		}
 
 		DontDestroyOnLoad(gameObject);
@@ -43,5 +44,23 @@ public class LevelManager : MonoBehaviour
 
 		LevelStarted = false;
 		OnLevelStopped?.Invoke();
+	}
+
+	public void LoadNextLevel()
+	{
+		LevelStarted = false;
+
+		// This is prototype implementation, please do not load scenes like this in the future
+		// TODO: Add place to store scenes order and metadata
+		// TODO: Add loading screen
+
+		int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+		if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings) 
+		{
+			Debug.LogError("Cannot load next level becouse it's last level");
+			return;
+		}
+
+		SceneManager.LoadScene(nextSceneIndex);
 	}
 }

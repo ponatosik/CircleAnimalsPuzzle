@@ -42,6 +42,11 @@ public class TrajectoryRenderer : MonoBehaviour
 		LevelManager.OnLevelStarted += ResetTrajectory;
 	}
 
+	void OnDestroy()
+	{
+		LevelManager.OnLevelStarted -= ResetTrajectory;
+	}
+
 	void FixedUpdate()
     {
 		_fixedFramesCount++;
