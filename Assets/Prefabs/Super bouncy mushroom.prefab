@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 8875537240462053064, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -88,6 +88,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8019146393708625467}
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3893457451201265665}
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6076948518661213216}
   m_SourcePrefab: {fileID: 100100000, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
 --- !u!1 &7664582898267705496 stripped
 GameObject:
@@ -222,3 +228,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &3893457451201265665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664582898267705496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9441dcd72bdc9d4ca7ac62eaa8653e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effect: {fileID: 6076948518661213216}
+--- !u!114 &6076948518661213216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664582898267705496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17382e9d08a61a54c91017fc14aaf7ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 7664582899275262178}
+  _color: {r: 1, g: 0, b: 0, a: 0.5019608}
+--- !u!212 &7664582899275262178 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8875537239320295089, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+  m_PrefabInstance: {fileID: 1257119549878836819}
+  m_PrefabAsset: {fileID: 0}

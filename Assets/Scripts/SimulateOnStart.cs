@@ -32,6 +32,7 @@ public class SimulateOnStart : MonoBehaviour
 
 	private void StartSimulating()
 	{
+		_rigidbody.isKinematic = false;
 		_rigidbody.simulated = true;
 	}
 
@@ -40,6 +41,7 @@ public class SimulateOnStart : MonoBehaviour
 		transform.position = _position;
 		_rigidbody.velocity = _velocity;
 		_rigidbody.angularVelocity = _angularVelocity;
-		_rigidbody.simulated = false;
+		_rigidbody.isKinematic = true;
+		_rigidbody.useFullKinematicContacts = true;
 	}
 }
