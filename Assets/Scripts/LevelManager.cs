@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 		{
 			Debug.Log($"Attempt to create second instance of {nameof(LevelManager)}");
 			Destroy(gameObject);
+			return;
 		}
 
 		DontDestroyOnLoad(gameObject);
