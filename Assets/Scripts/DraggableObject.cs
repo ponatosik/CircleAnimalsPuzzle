@@ -9,7 +9,7 @@ public class DraggableObject : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		if (LevelManager.LevelStarted) 
+		if (GameManager.LevelStarted) 
 		{
 			return;
 		}
@@ -21,7 +21,7 @@ public class DraggableObject : MonoBehaviour
 
 	void OnMouseDrag()
 	{
-		if (LevelManager.LevelStarted)
+		if (GameManager.LevelStarted)
 		{
 			return;
 		}

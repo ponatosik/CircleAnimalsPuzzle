@@ -14,8 +14,8 @@ public class DisableOnIntersection : MonoBehaviour
 
     void Start()
     {
-		LevelManager.OnLevelStarted += OnLevelStarted;
-		LevelManager.OnLevelStopped += OnLevelStopped;
+		GameManager.OnLevelStarted += OnLevelStarted;
+		GameManager.OnLevelStopped += OnLevelStopped;
 
 		_colliders = GetComponents<Collider2D>();
 		_isDisabled = HasIntersection();
@@ -24,13 +24,13 @@ public class DisableOnIntersection : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		LevelManager.OnLevelStarted -= OnLevelStarted;
-		LevelManager.OnLevelStopped -= OnLevelStopped;
+		GameManager.OnLevelStarted -= OnLevelStarted;
+		GameManager.OnLevelStopped -= OnLevelStopped;
 	}
 
 	void FixedUpdate()
     {
-        if (LevelManager.LevelStarted) 
+        if (GameManager.LevelStarted) 
         {
 			return;
 		}

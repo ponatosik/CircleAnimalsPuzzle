@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-	public static LevelManager Instance { get; private set; }
+	public static GameManager Instance { get; private set; }
 
 	public static event Action OnLevelStarted;
 	public static event Action OnLevelStopped;
@@ -14,13 +14,18 @@ public class LevelManager : MonoBehaviour
 	{
 		if (Instance != null)
 		{
-			Debug.Log($"Attempt to create second instance of {nameof(LevelManager)}");
+			Debug.Log($"Attempt to create second instance of {nameof(GameManager)}");
 			Destroy(gameObject);
 			return;
 		}
 
-		DontDestroyOnLoad(gameObject);
 		Instance = this;
+	}
+
+	private void OnDestroy()
+	{
+		OnLevelStarted = null;
+		OnLevelStopped = null;
 	}
 
 	public void StartLevel() 
@@ -58,7 +63,7 @@ public class LevelManager : MonoBehaviour
 		int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 		if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings) 
 		{
-			Debug.LogError("Cannot load next level becouse it's last level");
+			Debug.LogError("Cannot load next level because it is last level");
 			return;
 		}
 

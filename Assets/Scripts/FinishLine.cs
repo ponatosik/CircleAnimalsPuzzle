@@ -17,6 +17,6 @@ public class FinishLine : MonoBehaviour
     {
         yield return new WaitForSeconds(delayInSeconds);
 
-        LevelManager.Instance.LoadNextLevel();
+        GameManager.Instance.LoadNextLevel();
     }
 }

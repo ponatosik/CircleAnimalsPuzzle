@@ -20,13 +20,13 @@ public class StartLevelOnTouch : MonoBehaviour
 
 	private void SwitchLevelStatus() 
 	{
-		if (LevelManager.LevelStarted)
+		if (GameManager.LevelStarted)
 		{
-			LevelManager.Instance.StopLevel();
+			GameManager.Instance.StopLevel();
 		}
 		else
 		{
-			LevelManager.Instance.StartLevel();
+			GameManager.Instance.StartLevel();
 		}
 	}
 }

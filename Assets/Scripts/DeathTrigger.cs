@@ -8,7 +8,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            LevelManager.Instance.StopLevel();
+            GameManager.Instance.StopLevel();
         }
     }
 }

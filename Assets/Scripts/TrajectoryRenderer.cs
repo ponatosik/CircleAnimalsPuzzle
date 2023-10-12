@@ -39,18 +39,18 @@ public class TrajectoryRenderer : MonoBehaviour
 
 	void Start()
 	{
-		LevelManager.OnLevelStarted += ResetTrajectory;
+		GameManager.OnLevelStarted += ResetTrajectory;
 	}
 
 	void OnDestroy()
 	{
-		LevelManager.OnLevelStarted -= ResetTrajectory;
+		GameManager.OnLevelStarted -= ResetTrajectory;
 	}
 
 	void FixedUpdate()
     {
 		_fixedFramesCount++;
-		if (_fixedFramesCount >= _fixedFramesBetweenPoints && LevelManager.LevelStarted) 
+		if (_fixedFramesCount >= _fixedFramesBetweenPoints && GameManager.LevelStarted) 
 		{
 			AddTrajectoryPoint(transform.position);
 			_fixedFramesCount = 0;

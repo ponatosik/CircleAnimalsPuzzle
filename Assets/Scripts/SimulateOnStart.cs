@@ -18,16 +18,16 @@ public class SimulateOnStart : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		LevelManager.OnLevelStarted -= StartSimulating;
-		LevelManager.OnLevelStopped -= StopSimulating;
+		GameManager.OnLevelStarted -= StartSimulating;
+		GameManager.OnLevelStopped -= StopSimulating;
 	}
 
 	void Start()
     {
-        _rigidbody.simulated = LevelManager.LevelStarted;
+        _rigidbody.simulated = GameManager.LevelStarted;
 
-        LevelManager.OnLevelStarted += StartSimulating;
-		LevelManager.OnLevelStopped += StopSimulating;
+        GameManager.OnLevelStarted += StartSimulating;
+		GameManager.OnLevelStopped += StopSimulating;
 	}
 
 	private void StartSimulating()
