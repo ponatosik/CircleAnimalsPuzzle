@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SimulateOnStart : MonoBehaviour
@@ -7,6 +8,8 @@ public class SimulateOnStart : MonoBehaviour
 	private Vector3 _position;
 	private Vector3 _velocity;
 	private float _angularVelocity;
+	private float _angle;
+
 
 	void Awake()
 	{
@@ -14,6 +17,7 @@ public class SimulateOnStart : MonoBehaviour
 		_position = transform.position;
 		_velocity = _rigidbody.velocity;
 		_angularVelocity = _rigidbody.angularVelocity;
+		_angle = transform.eulerAngles.z;
 	}
 
 	private void OnDestroy()
@@ -43,5 +47,9 @@ public class SimulateOnStart : MonoBehaviour
 		_rigidbody.angularVelocity = _angularVelocity;
 		_rigidbody.isKinematic = true;
 		_rigidbody.useFullKinematicContacts = true;
+
+		Vector3 roatation = transform.eulerAngles;
+		roatation.z = _angle;
+		transform.eulerAngles = roatation;
 	}
 }
