@@ -64,7 +64,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncy mushroom Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7208775143494969024, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8875537239008566159, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
     m_AddedGameObjects: []
@@ -90,6 +91,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6911307276360510582}
+    - targetCorrespondingSourceObject: {fileID: 8875537240462053067, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 707966814147377064}
   m_SourcePrefab: {fileID: 100100000, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
 --- !u!1 &9046737497823469903 stripped
 GameObject:
@@ -251,6 +255,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 9046737498963401013}
   _color: {r: 1, g: 0, b: 0, a: 0.5019608}
+--- !u!114 &707966814147377064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9046737497823469903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9473faa813c5564ea42d9a262b7ca73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeParticles: {fileID: 0}
+  _playOnStart: 1
 --- !u!212 &9046737498963401013 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8875537239320295089, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}

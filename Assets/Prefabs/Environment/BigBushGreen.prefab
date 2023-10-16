@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 110373321680545795, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: m_Name
-      value: Big Bush Variant
+      value: BigBushGreen
       objectReference: {fileID: 0}
     - target: {fileID: 1957581876764124712, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957581876764124712, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: -4.4797397
       objectReference: {fileID: 0}
     - target: {fileID: 1957581876764124712, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.56
+      value: -4.27656
       objectReference: {fileID: 0}
     - target: {fileID: 1957581876764124712, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64,7 +64,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -815644167791712885, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1011797047831538222, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
     m_AddedGameObjects: []
@@ -72,6 +89,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 110373321680545795, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6634045615881483067}
+    - targetCorrespondingSourceObject: {fileID: 110373321680545795, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2568979778084155696}
   m_SourcePrefab: {fileID: 100100000, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
 --- !u!1 &5750681462790263264 stripped
 GameObject:
@@ -110,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032589257, y: 0.7767143}
+  m_Offset: {x: -0.027548745, y: 0.76260227}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,5 +141,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6958319, y: 1.6191988}
+  m_Size: {x: 0.4626477, y: 1.4555}
   m_EdgeRadius: 0
+--- !u!114 &2568979778084155696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750681462790263264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9473faa813c5564ea42d9a262b7ca73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeParticles: {fileID: 6965052042804486492}
+  _playOnStart: 1
+--- !u!198 &6965052042804486492 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+  m_PrefabInstance: {fileID: 5640364504014092771}
+  m_PrefabAsset: {fileID: 0}
