@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469409253316509137, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
       propertyPath: m_Name
-      value: Bush Variant
+      value: BushGreen
       objectReference: {fileID: 0}
     - target: {fileID: 1469409253316509138, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
       propertyPath: m_LocalScale.x
@@ -64,7 +64,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 490153613568074068, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1469409253964687509, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
     m_AddedGameObjects: []
@@ -72,6 +73,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1469409253316509137, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2299062560397371783}
+    - targetCorrespondingSourceObject: {fileID: 1469409253316509137, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7064363435763444928}
   m_SourcePrefab: {fileID: 100100000, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
 --- !u!1 &3800532259195901661 stripped
 GameObject:
@@ -110,7 +114,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0030499995, y: 0.52156013}
+  m_Offset: {x: 0.009124696, y: 0.4850371}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,5 +125,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2623048, y: 0.9206983}
+  m_Size: {x: 1.0269343, y: 0.8476523}
   m_EdgeRadius: 0
+--- !u!114 &7064363435763444928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800532259195901661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9473faa813c5564ea42d9a262b7ca73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeParticles: {fileID: 6494071030067682666}
+  _playOnStart: 1
+--- !u!198 &6494071030067682666 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8846691635745273446, guid: be26733893c2e4e4f8be90d1041ed24d, type: 3}
+  m_PrefabInstance: {fileID: 2367292627261516556}
+  m_PrefabAsset: {fileID: 0}
