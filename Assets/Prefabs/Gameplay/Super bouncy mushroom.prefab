@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bounciness: 1.5
-  BouncyCollider: {fileID: 4430681927085837444}
+  _bouncyCollider: {fileID: 4430681927085837444}
 --- !u!61 &8019146393708625467
 BoxCollider2D:
   m_ObjectHideFlags: 0

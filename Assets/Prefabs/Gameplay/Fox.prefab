@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2812518434076398618}
   - component: {fileID: 2724209792162241511}
   - component: {fileID: 4291835786085379043}
+  - component: {fileID: 3327740448838147096}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Player
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.93, y: 3.31, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2302779628807358736}
@@ -136,6 +137,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e9d201730335544d853d7733c938323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3327740448838147096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816191527569258403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4941d29df035303419cce028a428f8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1886675992383104662
