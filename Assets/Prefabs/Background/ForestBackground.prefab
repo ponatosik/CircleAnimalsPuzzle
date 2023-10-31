@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9164804628329959333}
   - component: {fileID: 7459162658339394991}
-  - component: {fileID: 6694643209425158424}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -47,52 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf39fdbed6f1c7d4da21400e3abb1f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
---- !u!61 &6694643209425158424
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872845977164779498}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 26.361015, y: -3.5930824}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 115.19966, y: 41.315804}
-  m_EdgeRadius: 0
+  _speed: 1
+  _sprite: {fileID: 7134161128574629076}
 --- !u!1 &3025251044028012950
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1392597736326434672}
   - component: {fileID: 7134161128574629076}
-  - component: {fileID: 8127294105446176779}
   m_Layer: 0
   m_Name: clouds
   m_TagString: Untagged
@@ -314,25 +268,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1392597736326434672
-RectTransform:
+--- !u!4 &1392597736326434672
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4513233127590740744}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.07780671}
+  m_LocalPosition: {x: -2.44, y: -3.59, z: -0.07780671}
   m_LocalScale: {x: 3, y: 3.8249998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9164804628329959333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.44, y: -3.59}
-  m_SizeDelta: {x: 19.2, y: 10.8}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7134161128574629076
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -385,14 +335,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!222 &8127294105446176779
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513233127590740744}
-  m_CullTransparentMesh: 1
 --- !u!1 &5970816988537927025
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +345,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3119415176562874481}
   - component: {fileID: 6289226225291294282}
-  - component: {fileID: 7395008392987474374}
   m_Layer: 0
   m_Name: clouds (1)
   m_TagString: Untagged
@@ -411,25 +352,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3119415176562874481
-RectTransform:
+--- !u!4 &3119415176562874481
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5970816988537927025}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.07780671}
+  m_LocalPosition: {x: 55.16, y: -3.59, z: -0.07780671}
   m_LocalScale: {x: 3, y: 3.8249998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9164804628329959333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.16, y: -3.59}
-  m_SizeDelta: {x: 19.2, y: 10.8}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &6289226225291294282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -482,14 +419,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!222 &7395008392987474374
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5970816988537927025}
-  m_CullTransparentMesh: 1
 --- !u!1 &6184589939642337901
 GameObject:
   m_ObjectHideFlags: 0

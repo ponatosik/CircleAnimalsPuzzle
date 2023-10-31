@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class Scroller : MonoBehaviour
 {
-    Vector3 startposition;
-    float repeatwidth;
-    public float speed = 1f;
-    void Start()
+    [SerializeField]
+    private float _speed = 1f;
+
+	[SerializeField]
+	private SpriteRenderer _sprite;
+
+	private Vector3 _startposition;
+	private float _repeatwidth;
+
+
+	void Start()
     {
-        startposition = transform.position;
-        repeatwidth = GetComponent<BoxCollider2D>().size.x / 2;
+		_startposition = transform.position;
+		_repeatwidth = _sprite.size.x * _sprite.transform.lossyScale.x;
     }
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
-        if (transform.position.x < startposition.x - repeatwidth)
+        transform.Translate(Vector3.left * Time.deltaTime * _speed);
+        if (transform.position.x < _startposition.x - _repeatwidth || transform.position.x > _startposition.x + _repeatwidth)
         {
-            transform.position = startposition;
+            transform.position = _startposition;
         }
-    } 
+	} 
 }
