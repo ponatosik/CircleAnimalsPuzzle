@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 122640275613224104, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 122640275613224104, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 971598708795660227, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -76,6 +84,58 @@ PrefabInstance:
       propertyPath: _randomizeSize
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: VelocityModule.orbitalY.minScalar
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100353745557828363, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502302706315253494, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6182989195125532912, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
       propertyPath: m_Color.b
       value: 0.8
@@ -104,6 +164,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1718521604881258984, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5018131739775159521}
+    - targetCorrespondingSourceObject: {fileID: 1718521604881258984, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3204779541254509675}
   m_SourcePrefab: {fileID: 100100000, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
 --- !u!198 &6185718056555767365 stripped
 ParticleSystem:
@@ -178,3 +241,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakeParticles: {fileID: 6185718056555767365}
   _playOnStart: 1
+--- !u!114 &3204779541254509675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855798179658681510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

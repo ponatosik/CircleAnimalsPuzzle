@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 306185852702572702, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
       propertyPath: m_Name
-      value: Tree 1 Green Variant
+      value: HugeTreeGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705484728583029545, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705484728583029545, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2206042275549548213, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
       propertyPath: m_LocalScale.x
@@ -60,6 +68,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386654128719805578, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8245249995958694673, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
     m_RemovedGameObjects:
@@ -72,6 +112,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 306185852702572702, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7597939365765873337}
+    - targetCorrespondingSourceObject: {fileID: 306185852702572702, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5754326974952657959}
   m_SourcePrefab: {fileID: 100100000, guid: 33a785f60e3064f4884b30419fa3d19a, type: 3}
 --- !u!198 &683820039243133272 stripped
 ParticleSystem:
@@ -142,3 +185,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9828544, y: 1.9222574}
   m_EdgeRadius: 0
+--- !u!114 &-5754326974952657959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575336772393438540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

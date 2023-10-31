@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: InitialModule.gravitySource
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -92,6 +92,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 110373321680545795, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2568979778084155696}
+    - targetCorrespondingSourceObject: {fileID: 110373321680545795, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4685949238090180491}
   m_SourcePrefab: {fileID: 100100000, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
 --- !u!1 &5750681462790263264 stripped
 GameObject:
@@ -157,6 +160,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakeParticles: {fileID: 6965052042804486492}
   _playOnStart: 1
+--- !u!114 &-4685949238090180491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750681462790263264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &6965052042804486492 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3381724276079139007, guid: 746bc8c5b21be0d4b80c3e0360d42167, type: 3}
