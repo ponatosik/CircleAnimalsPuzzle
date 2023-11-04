@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 	public static event Action OnLevelStopped;
 	public static bool LevelStarted { get; private set; }
 
+	public bool GamePaused { get; private set; } = false;
+
 	void Awake()
 	{
 		if (Instance != null)
@@ -39,6 +41,18 @@ public class GameManager : MonoBehaviour
 		LevelStarted = true;
 		OnLevelStarted?.Invoke();
 	}
+
+	public void PauseGame() 
+	{
+		GamePaused = true;
+		Time.timeScale = 0;
+	}
+	public void UnpauseGame() 
+	{
+		GamePaused = false;
+		Time.timeScale = 1;
+	}
+
 
 	public void StopLevel()
 	{
