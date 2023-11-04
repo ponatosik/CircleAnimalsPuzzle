@@ -55,18 +55,6 @@ public class GameManager : MonoBehaviour
 	public void LoadNextLevel()
 	{
 		LevelStarted = false;
-
-		// This is prototype implementation, please do not load scenes like this in the future
-		// TODO: Add place to store scenes order and metadata
-		// TODO: Add loading screen
-
-		int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-		if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings) 
-		{
-			Debug.LogError("Cannot load next level because it is last level");
-			return;
-		}
-
-		SceneManager.LoadScene(nextSceneIndex);
+		LevelSystem.Instance.LoadNextLevel();
 	}
 }
