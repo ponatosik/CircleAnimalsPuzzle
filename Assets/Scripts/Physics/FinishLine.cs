@@ -17,6 +17,18 @@ public class FinishLine : MonoBehaviour
     {
         yield return new WaitForSeconds(delayInSeconds);
 
-        GameManager.Instance.LoadNextLevel();
+        GameObject canvasObject = GameObject.Find("LevelUI");
+
+        if (canvasObject != null)
+        {
+            Transform finishMenuTransform = canvasObject.transform.Find("Finish menu");
+
+            if (finishMenuTransform != null)
+            {
+                GameObject finishMenu = finishMenuTransform.gameObject;
+
+                finishMenu.SetActive(true);
+            }
+        }
     }
 }
