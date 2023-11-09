@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +17,7 @@ public class FinishLine : MonoBehaviour
     {
         yield return new WaitForSeconds(delayInSeconds);
 
-        GameObject canvasObject = GameObject.Find("LevelUI");
+        GameObject canvasObject = GameObject.FindGameObjectWithTag("LevelUI");
 
         if (canvasObject != null)
         {

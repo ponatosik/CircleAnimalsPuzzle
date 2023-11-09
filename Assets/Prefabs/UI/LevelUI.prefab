@@ -3107,7 +3107,7 @@ GameObject:
   - component: {fileID: 6466455100144758117}
   m_Layer: 5
   m_Name: LevelUI
-  m_TagString: Untagged
+  m_TagString: LevelUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
