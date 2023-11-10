@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
 
 	private void OnDestroy()
 	{
+		if (GamePaused) 
+		{
+			Time.timeScale = 1;
+		}
+
 		OnLevelStarted = null;
 		OnLevelStopped = null;
 	}
