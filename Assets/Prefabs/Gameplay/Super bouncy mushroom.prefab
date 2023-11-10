@@ -68,7 +68,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Super bouncy mushroom
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7208775143494969024, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8875537239008566159, guid: 90f66bc2f808eda4493b4af023641df9, type: 3}
     m_AddedGameObjects: []
