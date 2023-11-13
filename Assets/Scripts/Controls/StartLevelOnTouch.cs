@@ -1,23 +1,26 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class StartLevelOnTouch : MonoBehaviour
 {
-	GameManager manager;
+	private GameManager _manager;
+	private GraphicRaycaster _graphicRaycaster;
 
 	void Update()
 	{
-		if (!Input.GetMouseButtonUp(0) || CheckClickOnObject() || manager.GamePaused)
+		if (Input.GetMouseButtonUp(0) && !CheckClickOnObject() && !_manager.GamePaused)
 		{
-			return;
+			SwitchLevelStatus();
 		}
-
-		SwitchLevelStatus();
 	}
 
 	private void Start()
 	{
-		manager = GameManager.Instance;
+		_manager = GameManager.Instance;
+		_graphicRaycaster = FindObjectOfType<GraphicRaycaster>();
 	}
 
 	private void SwitchLevelStatus() 
@@ -34,6 +37,16 @@ public class StartLevelOnTouch : MonoBehaviour
 
 	private bool CheckClickOnObject() 
 	{
-		return Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.right, 0.0001f);
+		if (Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.right, 0.0001f)) 
+		{
+			return true;
+		}
+
+		PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+		pointerEventData.position = Input.mousePosition;
+		List<RaycastResult> UIClicks = new();
+		_graphicRaycaster.Raycast(pointerEventData , UIClicks);
+
+		return UIClicks.Any();
 	}
 }
