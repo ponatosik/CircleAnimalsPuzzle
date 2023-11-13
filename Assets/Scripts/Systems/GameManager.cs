@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 	public static event Action OnLevelStopped;
 	public static bool LevelStarted { get; private set; }
 
+	[field: SerializeField]
+	public CollectablesCollection Collectables { get; private set; } = new ();
 	public bool GamePaused { get; private set; } = false;
 
 	void Awake()

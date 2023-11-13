@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class DestroyOnTouch : MonoBehaviour
+public class CollectableObject : MonoBehaviour
 {
 	private bool _isActive;
 
 	void Start()
 	{
 		_isActive = gameObject.activeSelf;
-		GameManager.OnLevelStopped += SetActive;
+		GameManager.OnLevelStopped += Uncollect;
 	}
 
 	private void OnDestroy()
 	{
-		GameManager.OnLevelStopped -= SetActive;
+		GameManager.OnLevelStopped -= Uncollect;
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
+		Collect();
+	}
+
+	private void Collect()
+	{
+		GameManager.Instance.Collectables.AddCollectable(this);
 		gameObject.SetActive(false);
 	}
 
-	private void SetActive() 
+	private void Uncollect() 
 	{
+		GameManager.Instance.Collectables.RemoveCollectable(this);
 		gameObject.SetActive(true);
 	}
 }
