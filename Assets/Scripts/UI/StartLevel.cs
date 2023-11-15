@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartLevelButton : MonoBehaviour
+public class StartLevel : MonoBehaviour
 {
-    //[SerializeField] Level level;
-
-    public void StartFirstLevel(Level level)
+    public void StartThisLevel(Level level)
     {
-        LevelSystem.Instance.LoadLevel(level);
+        if (level != null && level.Unclocked)
+        {
+            LevelSystem.Instance.LoadLevel(level);
+        }
     }
 }

@@ -26,7 +26,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        
+        pauseMenu.SetActive(false);
+        GameManager.Instance.StopLevel();
+        GameManager.Instance.UnpauseGame();
     }
 
     public void Menu()
