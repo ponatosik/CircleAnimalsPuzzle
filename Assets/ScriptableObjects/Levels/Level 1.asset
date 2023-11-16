@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   SceneName: Level1
-  Unclocked: 1
+  Unlocked: 1
   Stars: 0
   MaxStars: 3

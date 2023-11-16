@@ -33,16 +33,35 @@ public class LevelSystem : MonoBehaviour
 
 	public void LoadNextLevel() 
 	{
-		if (LoadedLevel == _levels[^1]) 
+		Level nextLevel = GetNextLevel();
+		if (nextLevel == _mainMenu) 
 		{
 			Debug.Log("That was last level, loading main menu...");
-			LoadMainMenu();
 			return;
 		}
-
-		int currentIndex = Array.IndexOf(_levels, LoadedLevel);
-		Level nextLevel = _levels[currentIndex + 1];
 		LoadLevel(nextLevel);
+	}
+
+	public void UnlockNextLevel()
+	{
+		GetNextLevel().Unlock();
+	}
+
+	public void UnlockAndLoadNextLevel() 
+	{
+		UnlockNextLevel();
+		LoadNextLevel();
+	}
+
+	public Level GetNextLevel()
+	{
+		if (LoadedLevel == _levels[^1])
+		{
+			return _mainMenu;
+		}
+
+		int currentLevelIndex = Array.IndexOf(_levels, LoadedLevel);
+		return _levels[currentLevelIndex + 1];
 	}
 
 	void Awake()
@@ -61,12 +80,12 @@ public class LevelSystem : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().buildIndex == 0)
 		{
-			// If run game from executable (built game), then load main menu
+			// If the game is run from executable (built game), then load main menu
 			LoadMainMenu();
 		}
 		else 
 		{
-			// If run game from engine, then try to undestand which level is loaded
+			// If the game is run from engine, then try to undestand which level is loaded
 			LoadedLevel = TryFindLoadedLevel();
 		}
 	}

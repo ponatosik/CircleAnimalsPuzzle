@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MainMenu
   m_EditorClassIdentifier: 
   SceneName: Main Menu
-  Unclocked: 1
+  Unlocked: 1
   Stars: 0
   MaxStars: 0

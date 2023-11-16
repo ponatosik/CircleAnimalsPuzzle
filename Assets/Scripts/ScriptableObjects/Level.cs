@@ -8,4 +8,9 @@ public class Level : ScriptableObject
 	public bool Unlocked = false;
 	public int Stars = 0;
 	public int MaxStars = 3;
+
+	public void Unlock() 
+	{
+		Unlocked = true;
+	}
 }

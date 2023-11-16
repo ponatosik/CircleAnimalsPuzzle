@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
 
 	public void LoadNextLevel()
 	{
-		LevelStarted = false;
-		LevelSystem.Instance.LoadNextLevel();
+		LevelSystem.Instance.UnlockAndLoadNextLevel();
 	}
 }
