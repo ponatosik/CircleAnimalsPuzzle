@@ -5,7 +5,7 @@ public class StartLevel : MonoBehaviour
 {
     public void StartThisLevel(Level level)
     {
-        if (level != null && level.Unclocked)
+        if (level != null && level.Unlocked)
         {
             LevelSystem.Instance.LoadLevel(level);
         }

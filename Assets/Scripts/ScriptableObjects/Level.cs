@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Level : ScriptableObject
 {
 	public string SceneName = "Level";
-	public bool Unclocked = false;
+	public bool Unlocked = false;
 	public int Stars = 0;
 	public int MaxStars = 3;
 }
