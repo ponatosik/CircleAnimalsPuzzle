@@ -15,7 +15,9 @@ public class LevelSystem : MonoBehaviour
 
 	public Level LoadedLevel { get; private set; } = null;
 
-	public Level[] GetLevels() 
+    public Level[] Levels => _levels;
+
+    public Level[] GetLevels() 
 	{
 		return _levels;
 	}
