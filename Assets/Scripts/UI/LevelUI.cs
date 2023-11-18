@@ -9,8 +9,7 @@ public class LevelUI : MonoBehaviour
 
     public void NextLevel()
     {
-        //GameManager.Instance.LoadNextLevel();
-        LevelSystem.Instance.UnlockAndLoadNextLevel();
+        GameManager.Instance.LoadNextLevel();
     }
 
     public void ReturnToMenu()

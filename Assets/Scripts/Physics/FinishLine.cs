@@ -10,7 +10,7 @@ public class FinishLine : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(LoadNextSceneWithDelay(2f));
-            
+            LevelSystem.Instance.UnlockNextLevel();
         }
     }
 
