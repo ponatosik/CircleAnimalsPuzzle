@@ -55,6 +55,14 @@ public class LevelSystem : MonoBehaviour
 		LoadNextLevel();
 	}
 
+	public void CompleteCurrentLevel(int stars) 
+	{
+		if(stars > LoadedLevel.Stars) 
+		{
+			LoadedLevel.CompleteWithStars(stars);
+		}
+	}
+
 	public Level GetNextLevel()
 	{
 		if (LoadedLevel == _levels[^1])

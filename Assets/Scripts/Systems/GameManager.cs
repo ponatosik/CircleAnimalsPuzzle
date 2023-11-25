@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
 		OnLevelStopped?.Invoke();
 	}
 
+	public void CompleteLevel() 
+	{
+		LevelSystem.Instance.CompleteCurrentLevel(Collectables.GetCollectedNumber());
+		LevelSystem.Instance.UnlockNextLevel();
+	}
+
 	public void LoadNextLevel()
 	{
 		LevelSystem.Instance.UnlockAndLoadNextLevel();

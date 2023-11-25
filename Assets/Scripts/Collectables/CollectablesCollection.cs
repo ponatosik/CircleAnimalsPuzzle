@@ -19,6 +19,11 @@ public class CollectablesCollection
 		_collectedObjects.Remove(collectable);
 	}
 
+	public int GetCollectedNumber()
+	{
+		return _collectedObjects.Count;
+	}
+
 	public IEnumerable<CollectableObject> GetCollected() 
     {
         return _collectedObjects;

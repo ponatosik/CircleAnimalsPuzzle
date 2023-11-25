@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84fa48a252e6b341b0fe132f7e11130, type: 3}
   m_Name: Level 6
   m_EditorClassIdentifier: 
-  SceneName: Level6
-  Unclocked: 0
-  Stars: 0
+  SceneName: Level4
   MaxStars: 3

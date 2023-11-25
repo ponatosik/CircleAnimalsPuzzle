@@ -88,6 +88,18 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
+    volume: 0.016
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
+    volume: 0.013
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!114 &5975024396788332701
 MonoBehaviour:
   m_ObjectHideFlags: 0

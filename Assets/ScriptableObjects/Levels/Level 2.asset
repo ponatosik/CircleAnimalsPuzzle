@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84fa48a252e6b341b0fe132f7e11130, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  SceneName: Level2
-  Unclocked: 0
-  Stars: 0
-  MaxStars: 3
+  SceneName: Tutorial2
+  MaxStars: 0
