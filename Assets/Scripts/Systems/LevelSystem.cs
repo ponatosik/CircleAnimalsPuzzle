@@ -90,6 +90,8 @@ public class LevelSystem : MonoBehaviour
 			// If the game is run from engine, then try to undestand which level is loaded
 			LoadedLevel = TryFindLoadedLevel();
 		}
+
+		_levels[0].Unlock();
 	}
 
 	private Level TryFindLoadedLevel() 

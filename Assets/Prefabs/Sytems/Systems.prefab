@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1990226904830917989}
   - component: {fileID: 1891013224682107005}
   - component: {fileID: -5253932019166290902}
+  - component: {fileID: 5975024396788332701}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -83,7 +84,19 @@ MonoBehaviour:
   sounds:
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 0
+    volume: 0.013
     pitch: 1
     loop: 1
     source: {fileID: 0}
+--- !u!114 &5975024396788332701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012735342894352889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51d2e3757f79b946b8492597f5feccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

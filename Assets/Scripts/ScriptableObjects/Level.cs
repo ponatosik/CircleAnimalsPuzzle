@@ -1,16 +1,33 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu (fileName = "Level", menuName = "Scriptable objects/Level")]
+[CreateAssetMenu(fileName = "Level", menuName = "Scriptable objects/Level")]
 public class Level : ScriptableObject
 {
 	public string SceneName = "Level";
-	public bool Unlocked = false;
-	public int Stars = 0;
 	public int MaxStars = 3;
 
-	public void Unlock() 
+	public bool Unlocked => GetProgressData().Unlocked;
+	public int Stars => GetProgressData().Stars;
+
+
+	public void Unlock()
 	{
-		Unlocked = true;
+		LevelProgressData progressData = GetProgressData();
+		progressData.Unlocked = true;
+		LevelProgressStorage.Instance.SaveProgressData(progressData, SceneName);
+	}
+
+	public void CompleteWithStars(int stars)
+	{
+		LevelProgressData progressData = GetProgressData();
+		progressData.Stars = stars;
+		LevelProgressStorage.Instance.SaveProgressData(progressData, SceneName);
+	}
+
+	public LevelProgressData GetProgressData()
+	{
+		return LevelProgressStorage.Instance.LoadProgressData(SceneName);
 	}
 }
