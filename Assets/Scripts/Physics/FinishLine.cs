@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
+    private Starsinlevel starsInLevel;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             StartCoroutine(LoadNextSceneWithDelay(2f));
+            
             GameManager.Instance.CompleteLevel();
         }
     }
@@ -29,6 +32,19 @@ public class FinishLine : MonoBehaviour
                 GameObject finishMenu = finishMenuTransform.gameObject;
 
                 finishMenu.SetActive(true);
+
+
+
+                int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
+
+                    starsInLevel.DisplayCollectedNumber(collectedNumber);
+                
+               
+
+
+
+
+                Starsinlevel.OutputCollectedNumber();
             }
         }
     }
