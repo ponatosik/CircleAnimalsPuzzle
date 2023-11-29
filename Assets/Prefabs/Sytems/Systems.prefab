@@ -81,25 +81,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a783dba6dda722b4cae9d834690736e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
+  _music:
   - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 0.013
+    clip: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 0.016
+    clip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 0.013
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
+  _sounds: []
 --- !u!114 &5975024396788332701
 MonoBehaviour:
   m_ObjectHideFlags: 0
