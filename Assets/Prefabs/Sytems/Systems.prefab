@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _music:
   - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
+    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
     volume: 1
     pitch: 1
     loop: 1
