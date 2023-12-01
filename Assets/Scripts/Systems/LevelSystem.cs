@@ -13,9 +13,30 @@ public class LevelSystem : MonoBehaviour
 	[SerializeField]
 	private Level _mainMenu;
 
-	public Level LoadedLevel { get; private set; } = null;
+	[SerializeField]
+	private string _lastUnlcockedLevelPrefsStr = "Levels.LastUnlocked";
 
-    public Level[] Levels => _levels;
+	public Level LoadedLevel { get; private set; } = null;
+	public Level PreviousLoadedLevel { get; private set; } = null;
+	public Level GetLastUnlcockedLevel()
+	{
+		int levelIndex = PlayerPrefs.GetInt(_lastUnlcockedLevelPrefsStr, -1);
+		if (levelIndex == -1 || levelIndex >= _levels.Length) 
+		{
+			return null;
+		}
+
+		Level level = _levels[levelIndex];
+        if (level.Unlocked)
+        {
+			return null;
+		}
+
+        return level;
+	}
+	
+
+	public Level[] Levels => _levels;
 
     public Level[] GetLevels() 
 	{
@@ -25,6 +46,7 @@ public class LevelSystem : MonoBehaviour
 	public void LoadLevel(Level level)
 	{
 		SceneManager.LoadScene(level.SceneName);
+		PreviousLoadedLevel = LoadedLevel;
 		LoadedLevel = level;
 	}
 
@@ -46,7 +68,13 @@ public class LevelSystem : MonoBehaviour
 
 	public void UnlockNextLevel()
 	{
-		GetNextLevel().Unlock();
+		Level nextLevel = GetNextLevel();
+        if (!nextLevel.Unlocked)
+        {
+			nextLevel.Unlock();
+			int levelIndex = Array.IndexOf(_levels, nextLevel);
+			PlayerPrefs.SetInt(_lastUnlcockedLevelPrefsStr, levelIndex);
+		}
 	}
 
 	public void UnlockAndLoadNextLevel() 
