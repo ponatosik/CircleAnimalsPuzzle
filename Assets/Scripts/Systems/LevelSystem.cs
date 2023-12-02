@@ -27,7 +27,7 @@ public class LevelSystem : MonoBehaviour
 		}
 
 		Level level = _levels[levelIndex];
-        if (level.Unlocked)
+        if (!level.Unlocked)
         {
 			return null;
 		}
