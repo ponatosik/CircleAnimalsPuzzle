@@ -37,7 +37,7 @@ public class FinishLine : MonoBehaviour
 
                 int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
 
-                    starsInLevel.DisplayCollectedNumber(collectedNumber);
+                    //starsInLevel.DisplayCollectedNumber(collectedNumber);
                 
                
 

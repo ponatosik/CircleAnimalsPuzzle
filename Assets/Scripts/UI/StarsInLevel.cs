@@ -10,7 +10,7 @@ public class Starsinlevel : MonoBehaviour
         int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
         Debug.Log($"Number of collectibles: {collectedNumber}");
     }
-
+    /*
     [SerializeField]
     private GameObject yellowStarPrefab;  
     private GameObject emptyStarPrefab;
@@ -62,5 +62,5 @@ public class Starsinlevel : MonoBehaviour
 
             rectTransform.localPosition = new Vector3(xPos, yPos, 0f);
         }
-    }
+    }*/
 }
