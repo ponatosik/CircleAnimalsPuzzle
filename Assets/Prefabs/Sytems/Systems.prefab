@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b83a2915d5fda4b857e5904367c559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transition: {fileID: 2216689688129138401, guid: 2e7bead415bb51946b8ed4e937d3a5ef, type: 3}
   _levels:
   - {fileID: 11400000, guid: 8e15e9d116688cc4fb40c9488019bcf3, type: 2}
   - {fileID: 11400000, guid: 71111372a52aead4bbff0d4f177082b7, type: 2}
@@ -69,6 +70,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c14a3c802c9a044449a97aaa63ba4a29, type: 2}
   - {fileID: 11400000, guid: 2521c70cbf925f54ca49cd5fce9dfa33, type: 2}
   _mainMenu: {fileID: 11400000, guid: 0d9ceb086b1e46c4597bde85ee72d282, type: 2}
+  _lastUnlcockedLevelPrefsStr: Levels.LastUnlocked
 --- !u!114 &-5253932019166290902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,13 +86,13 @@ MonoBehaviour:
   _music:
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 1
+    volume: 0.05
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
-    volume: 1
+    volume: 0.05
     pitch: 1
     loop: 1
     source: {fileID: 0}

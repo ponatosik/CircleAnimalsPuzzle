@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,10 @@ public class LevelSystem : MonoBehaviour
 {
 	public static LevelSystem Instance { get; private set; }
 
-	[SerializeField]
+    [SerializeField]
+    private SceneTransition _transition;
+
+    [SerializeField]
 	private Level[] _levels;
 
 	[SerializeField]
@@ -45,12 +49,10 @@ public class LevelSystem : MonoBehaviour
 
 	public void LoadLevel(Level level)
 	{
-		SceneManager.LoadScene(level.SceneName);
-		PreviousLoadedLevel = LoadedLevel;
-		LoadedLevel = level;
-	}
+        StartCoroutine(levelTransitionRoutine(level));
+    }
 
-	public void LoadMainMenu()
+    public void LoadMainMenu()
 	{
 		LoadLevel(_mainMenu);
 	}
@@ -102,7 +104,18 @@ public class LevelSystem : MonoBehaviour
 		return _levels[currentLevelIndex + 1];
 	}
 
-	void Awake()
+    private IEnumerator levelTransitionRoutine(Level level)
+    {
+		SceneTransition transition = Instantiate(_transition);
+        transition.BeginTransition();
+        yield return new WaitForSecondsRealtime(transition.TransitionTime);
+        SceneManager.LoadScene(level.SceneName);
+        transition.EndTransition();
+        PreviousLoadedLevel = LoadedLevel;
+        LoadedLevel = level;
+    }
+
+    void Awake()
 	{
 		if (Instance != null)
 		{
