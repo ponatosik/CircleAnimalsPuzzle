@@ -6,6 +6,6 @@ public class MainMenuMusic : MonoBehaviour
 {
     void Start()
     {
-        AudioManager.instance.PlayMusic("MainMenuMusic");
+        AudioManager.instance.PlayMusic("MainMenuMusic", 1);
     }
 }

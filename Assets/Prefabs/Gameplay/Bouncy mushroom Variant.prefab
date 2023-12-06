@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundOnCollision: BounceSound
 --- !u!114 &1677183923706653649
 MonoBehaviour:
   m_ObjectHideFlags: 0

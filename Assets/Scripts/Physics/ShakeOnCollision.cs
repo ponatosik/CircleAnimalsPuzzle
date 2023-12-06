@@ -10,7 +10,11 @@ public class ShakeOnCollision : MonoBehaviour
 {
 	Animator _animator;
 
-	private void Start()
+	[SerializeField]
+	private string _soundOnCollision = "ThreeSound";
+
+
+    private void Start()
 	{
 		_animator = GetComponent<Animator>();
 	}
@@ -18,6 +22,6 @@ public class ShakeOnCollision : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		_animator.SetTrigger("Shake");
-        AudioManager.instance.PlaySound("ThreeSound");
+        AudioManager.instance.PlaySound(_soundOnCollision);
     }
 }

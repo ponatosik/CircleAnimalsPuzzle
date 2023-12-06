@@ -104,7 +104,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: ThreeSound
-    clip: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+    clip: {fileID: 8300000, guid: 56126b0abe57c8b4588a70918220f3aa, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
