@@ -6,12 +6,15 @@ using UnityEngine;
 public class CollectableObject : MonoBehaviour
 {
 	private bool _isActive;
+	private CollectablesCollection _collectablesPool;
 
 	void Start()
 	{
 		_isActive = gameObject.activeSelf;
 		GameManager.OnLevelStopped += Uncollect;
-	}
+		_collectablesPool = GameManager.Instance.Collectables;
+		_collectablesPool.Register(this);
+    }
 
 	private void OnDestroy()
 	{
@@ -25,14 +28,14 @@ public class CollectableObject : MonoBehaviour
 
 	private void Collect()
 	{
-		GameManager.Instance.Collectables.AddCollectable(this);
+        _collectablesPool.Collect(this);
 		gameObject.SetActive(false);
         AudioManager.instance.PlaySound("AppleSound");
     }
 
 	private void Uncollect() 
 	{
-		GameManager.Instance.Collectables.RemoveCollectable(this);
+        _collectablesPool.Uncollect(this);
 		gameObject.SetActive(true);
 	}
 }
