@@ -27,7 +27,8 @@ public class CollectableObject : MonoBehaviour
 	{
 		GameManager.Instance.Collectables.AddCollectable(this);
 		gameObject.SetActive(false);
-	}
+        AudioManager.instance.PlaySound("AppleSound");
+    }
 
 	private void Uncollect() 
 	{

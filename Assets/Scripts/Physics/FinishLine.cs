@@ -11,6 +11,8 @@ public class FinishLine : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySound("FinishSound");
+
             StartCoroutine(LoadNextSceneWithDelay(2f));
             
             GameManager.Instance.CompleteLevel();

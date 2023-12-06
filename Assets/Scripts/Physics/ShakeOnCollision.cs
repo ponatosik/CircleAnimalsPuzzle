@@ -18,5 +18,6 @@ public class ShakeOnCollision : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		_animator.SetTrigger("Shake");
-	}
+        AudioManager.instance.PlaySound("ThreeSound");
+    }
 }

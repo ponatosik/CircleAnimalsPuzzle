@@ -28,7 +28,8 @@ public class BouncyObject : MonoBehaviour
 	{
 		if (collision.gameObject.TryGetComponent<CollisionWorkaround>(out CollisionWorkaround workaround))
 		{
-			return workaround.GetLastFrameVelocity().magnitude;
+            AudioManager.instance.PlaySound("BounceSound");
+            return workaround.GetLastFrameVelocity().magnitude;
 		}
 		return collision.relativeVelocity.magnitude;
 	}

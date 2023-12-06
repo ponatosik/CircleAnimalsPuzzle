@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour {
 
     public static AudioManager instance;
+
+    private float originalMusicVolume;
+    private float originalSoundVolume;
 
     public Sound[] _music;
     public Sound[] _sounds;
@@ -87,12 +92,39 @@ public class AudioManager : MonoBehaviour {
         music.source.volume = music.volume;
     }
 
-    public void StopMusic(string musicName)
+    IEnumerator FadeOutMusic(Sound music, float duration)
+    {
+        float startVolume = music.volume;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            music.source.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        music.source.Stop();
+        music.source.volume = startVolume;
+    }
+
+    public void StopMusic(string musicName, float fadeDuration = 0f)
     {
         Sound music = Array.Find(_music, item => item.name == musicName);
         if (music != null)
         {
-            music.source.Stop();
+            if (fadeDuration > 0)
+            {
+                if (fadingCoroutine != null)
+                {
+                    StopCoroutine(fadingCoroutine);
+                }
+                fadingCoroutine = StartCoroutine(FadeOutMusic(music, fadeDuration));
+            }
+            else
+            {
+                music.source.Stop();
+            }
         }
         else
         {
@@ -154,21 +186,23 @@ public class AudioManager : MonoBehaviour {
 
     public void MuteSound()
     {
+        originalSoundVolume = GetSoundVolume();
         SetSoundVolume(0);
     }
 
     public void MuteMusic()
     {
+        originalMusicVolume = GetMusicVolume();
         SetMusicVolume(0);
     }
 
     public void UnmuteSound()
     {
-        SetSoundVolume(1);
+        SetSoundVolume(originalSoundVolume);
     }
 
     public void UnmuteMusic()
     {
-        SetMusicVolume(1);
+        SetMusicVolume(originalMusicVolume);
     }
 }
