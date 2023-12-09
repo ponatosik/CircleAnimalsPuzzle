@@ -9,9 +9,7 @@ public class MainMenuMusic : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
         AudioManager.instance.PlayMusic("MainMenuMusic", 1);
-=======
         AudioManager.instance.PlayMusic("MainMenuMusic");
 
         if (AudioManager.instance != null)
@@ -33,6 +31,5 @@ public class MainMenuMusic : MonoBehaviour
     private void SetSoundVolume(float volume)
     {
         AudioManager.instance.SetSoundVolume(volume);
->>>>>>> Stashed changes
     }
 }
