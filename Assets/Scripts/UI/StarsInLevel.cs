@@ -3,9 +3,13 @@ using UnityEngine;
 public class Starsinlevel : MonoBehaviour
 {
 
-    public GameObject star1;
-    public GameObject star2;
-    public GameObject star3;
+    public GameObject star1gold;
+    public GameObject star2gold;
+    public GameObject star3gold;
+
+    public GameObject star1gray;
+    public GameObject star2gray;
+    public GameObject star3gray;
 
     public static Starsinlevel instance;
 
@@ -17,24 +21,37 @@ public class Starsinlevel : MonoBehaviour
     public static void OutputCollectedNumber()
     {
         int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
+        int allStars = GameManager.Instance.Collectables.GetAllCollectablesNumber();
         Debug.Log($"Number of collectibles: {collectedNumber}");
 
-        ActivateStars(collectedNumber);
+        ActivateStars(collectedNumber, allStars);
     }
 
-    private static void ActivateStars(int collectedNumber)
+    private static void ActivateStars(int collectedNumber, int allStars)
     {
-        if (collectedNumber >= 1)
+        if (allStars >= 1)
         {
-            instance.star1.SetActive(true);
+           instance.star1gray.SetActive(true);
         }
-        if (collectedNumber >= 2)
+        if (allStars >= 2)
         {
-            instance.star2.SetActive(true);
+            instance.star2gray.SetActive(true);
         }
-        if (collectedNumber >= 3)
+        if (allStars >= 3)
         {
-            instance.star3.SetActive(true);
+            instance.star3gray.SetActive(true);
+        }
+        if (allStars >= 1 & collectedNumber >= 1)
+        {
+            instance.star1gold.SetActive(true);
+        }
+        if (allStars >= 2 & collectedNumber >= 2)
+        {
+            instance.star2gold.SetActive(true);
+        }
+        if (allStars >= 3 & collectedNumber >= 3)
+        {
+            instance.star3gold.SetActive(true);
         }
     }
 
