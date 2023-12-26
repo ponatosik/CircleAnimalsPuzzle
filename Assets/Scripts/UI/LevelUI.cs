@@ -19,9 +19,7 @@ public class LevelUI : MonoBehaviour
 
     public void RestartLevel()
     {
-        finishMenu.SetActive(false);
         LevelSystem.Instance.LoadLevel(LevelSystem.Instance.LoadedLevel);
         GameManager.Instance.UnpauseGame();
-
     }
 }

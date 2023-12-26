@@ -5,44 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField]
+    TransitionEffect _transitionEffect;
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
         GameManager.Instance.PauseGame();
-    }
+		_transitionEffect.Activate();
 
-    public void Hint()
-    {
-        
-    }
+	}
 
     public void Resume()
     {
-        pauseMenu.SetActive(false);
-        GameManager.Instance.UnpauseGame();
+		_transitionEffect.Deactivate();
+		GameManager.Instance.UnpauseGame();
     }
 
     public void Restart()
     {
-        pauseMenu.SetActive(false);
-        LevelSystem.Instance.LoadLevel(LevelSystem.Instance.LoadedLevel);
+		LevelSystem.Instance.LoadLevel(LevelSystem.Instance.LoadedLevel);
         GameManager.Instance.UnpauseGame();
     }
 
     public void Menu()
     {
         LevelSystem.Instance.LoadMainMenu();
-    }
-
-    public void Music()
-    {
-
-    }
-
-    public void Sound()
-    {
-        
     }
 }

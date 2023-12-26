@@ -9,7 +9,7 @@ public class LevelSystem : MonoBehaviour
 	public static LevelSystem Instance { get; private set; }
 
     [SerializeField]
-    private SceneTransition _transition;
+    private TransitionEffect _transition;
 
     [SerializeField]
 	private Level[] _levels;
@@ -113,7 +113,7 @@ public class LevelSystem : MonoBehaviour
 
     private IEnumerator levelTransitionRoutine(Level level)
     {
-		SceneTransition transition = Instantiate(_transition);
+		TransitionEffect transition = Instantiate(_transition);
         transition.BeginTransition();
         yield return new WaitForSecondsRealtime(transition.TransitionTime);
         SceneManager.LoadScene(level.SceneName);

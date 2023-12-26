@@ -33,19 +33,9 @@ public class FinishLine : MonoBehaviour
             {
                 GameObject finishMenu = finishMenuTransform.gameObject;
 
-                finishMenu.SetActive(true);
-
-
+                finishMenu.GetComponent<UIFadeEffect>().Activate();
 
                 int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
-
-                    //starsInLevel.DisplayCollectedNumber(collectedNumber);
-                
-               
-
-
-
-
                 Starsinlevel.OutputCollectedNumber();
             }
         }
