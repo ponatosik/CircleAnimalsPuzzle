@@ -13,7 +13,6 @@ public class LevelProgressStorage : MonoBehaviour
 	{
 		if (!FileUtils.ReadObjectFromJsonFile(fileName, out LevelProgressData result))
 		{
-			Debug.LogWarning($"Unable to read {nameof(LevelProgressData)} from file: {fileName}, creating new progress data file");
 			result = new LevelProgressData();
 		}
 		_cache[fileName] = result;

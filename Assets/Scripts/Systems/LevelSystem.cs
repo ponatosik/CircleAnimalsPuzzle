@@ -17,11 +17,18 @@ public class LevelSystem : MonoBehaviour
 	[SerializeField]
 	private Level _mainMenu;
 
+	[Header("Configuration")]
+
 	[SerializeField]
 	private string _lastUnlcockedLevelPrefsStr = "Levels.LastUnlocked";
 
 	public Level LoadedLevel { get; private set; } = null;
 	public Level PreviousLoadedLevel { get; private set; } = null;
+
+	public int TotalStars => _levels.Select(level => level.MaxStars).Sum();
+	public int TotalStarsCollected => _levels.Select(level => level.Stars).Sum();
+
+
 	public Level GetLastUnlcockedLevel()
 	{
 		int levelIndex = PlayerPrefs.GetInt(_lastUnlcockedLevelPrefsStr, -1);
@@ -141,6 +148,9 @@ public class LevelSystem : MonoBehaviour
 		}
 
 		_levels[0].Unlock();
+
+		Debug.Log(TotalStars);
+		Debug.Log(TotalStarsCollected);
 	}
 
 	private Level TryFindLoadedLevel() 
