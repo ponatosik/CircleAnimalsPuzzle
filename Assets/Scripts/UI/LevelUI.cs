@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelUI : MonoBehaviour
 {
-    [SerializeField] GameObject finishMenu;
+	[SerializeField] ObjectEffect finishMenuTransition;
 
-    public void NextLevel()
+	void Start()
+	{
+        GameManager.OnLevelComplete += finishMenuTransition.Activate;
+	}
+
+	public void NextLevel()
     {
         GameManager.Instance.LoadNextLevel();
     }

@@ -3022,7 +3022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6269833a8bf9c4ba78b88df7e55a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishMenu: {fileID: 7625031796096556547}
+  finishMenuTransition: {fileID: 7172007876706077582}
 --- !u!1 &8140604060570081239
 GameObject:
   m_ObjectHideFlags: 0

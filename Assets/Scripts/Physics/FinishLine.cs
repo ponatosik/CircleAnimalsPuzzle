@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
-    private Starsinlevel starsInLevel;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -14,8 +12,6 @@ public class FinishLine : MonoBehaviour
             AudioManager.instance.PlaySound("FinishSound");
 
             StartCoroutine(LoadNextSceneWithDelay(2f));
-            
-            GameManager.Instance.CompleteLevel();
         }
     }
 
@@ -25,19 +21,9 @@ public class FinishLine : MonoBehaviour
 
         GameObject canvasObject = GameObject.FindGameObjectWithTag("LevelUI");
 
-        if (canvasObject != null)
-        {
-            Transform finishMenuTransform = canvasObject.transform.Find("Finish menu");
+		GameManager.Instance.CompleteLevel();
 
-            if (finishMenuTransform != null)
-            {
-                GameObject finishMenu = finishMenuTransform.gameObject;
-
-                finishMenu.GetComponent<UIFadeEffect>().Activate();
-
-                int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
-                Starsinlevel.OutputCollectedNumber();
-            }
-        }
-    }
+		int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
+		Starsinlevel.OutputCollectedNumber();
+	}
 }
