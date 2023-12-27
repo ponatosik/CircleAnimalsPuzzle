@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
 	public static event Action OnLevelStarted;
 	public static event Action OnLevelStopped;
-	public static event Action OnLevelComplete;
+	public static event Action<int> OnLevelComplete;
 
 	public static bool LevelStarted { get; private set; }
 
@@ -78,8 +78,9 @@ public class GameManager : MonoBehaviour
 
 	public void CompleteLevel() 
 	{
-		OnLevelComplete?.Invoke();
-		LevelSystem.Instance.CompleteCurrentLevel(Collectables.GetCollectedNumber());
+		int collectedNumber = Collectables.GetCollectedNumber();
+		OnLevelComplete?.Invoke(collectedNumber);
+		LevelSystem.Instance.CompleteCurrentLevel(collectedNumber);
 		LevelSystem.Instance.UnlockNextLevel();
 	}
 
