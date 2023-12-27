@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 	public static event Action<int> OnLevelComplete;
 
 	public static bool LevelStarted { get; private set; }
+	private bool _levelCompleted;
+
 
 	[field: SerializeField]
 	public CollectablesCollection Collectables { get; private set; } = new ();
@@ -44,7 +46,13 @@ public class GameManager : MonoBehaviour
 	{
 		if (LevelStarted)
 		{
-			Debug.LogWarning($"Attempt to start level when it already started");
+			Debug.LogWarning($"Attempt to start level when it s already started");
+			return;
+		}
+
+		if (_levelCompleted)
+		{
+			Debug.LogWarning($"Attempt to start level when it is already completed");
 			return;
 		}
 
@@ -52,12 +60,13 @@ public class GameManager : MonoBehaviour
 		OnLevelStarted?.Invoke();
 	}
 
-	public void PauseGame() 
+	public void PauseGame()
 	{
 		GamePaused = true;
 		Time.timeScale = 0;
+
 	}
-	public void UnpauseGame() 
+	public void UnpauseGame()
 	{
 		GamePaused = false;
 		Time.timeScale = 1;
@@ -68,7 +77,13 @@ public class GameManager : MonoBehaviour
 	{
 		if (!LevelStarted)
 		{
-			Debug.LogWarning($"Attempt to stop level when it already stopped");
+			Debug.LogWarning($"Attempt to stop level when it is already stopped");
+			return;
+		}
+
+		if (_levelCompleted)
+		{
+			Debug.LogWarning($"Attempt to stop level when it is already completed");
 			return;
 		}
 
@@ -76,8 +91,15 @@ public class GameManager : MonoBehaviour
 		OnLevelStopped?.Invoke();
 	}
 
+	public void CompleteLevelWithDelay(float delay)
+	{
+		_levelCompleted = true;
+		Invoke(nameof(CompleteLevel), delay);
+	}
+
 	public void CompleteLevel() 
 	{
+		_levelCompleted = true;
 		int collectedNumber = Collectables.GetCollectedNumber();
 		OnLevelComplete?.Invoke(collectedNumber);
 		LevelSystem.Instance.CompleteCurrentLevel(collectedNumber);

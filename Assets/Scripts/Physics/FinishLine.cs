@@ -17,12 +17,8 @@ public class FinishLine : MonoBehaviour
 
     IEnumerator LoadNextSceneWithDelay(float delayInSeconds)
     {
-        yield return new WaitForSeconds(delayInSeconds);
-
-        GameObject canvasObject = GameObject.FindGameObjectWithTag("LevelUI");
-
-		GameManager.Instance.CompleteLevel();
-
+		GameManager.Instance.CompleteLevelWithDelay(delayInSeconds);
+		yield return new WaitForSeconds(delayInSeconds);
 		int collectedNumber = GameManager.Instance.Collectables.GetCollectedNumber();
 		Starsinlevel.OutputCollectedNumber();
 	}
