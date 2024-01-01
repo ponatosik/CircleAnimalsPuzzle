@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10891400}
+  - component: {fileID: 10891401}
   m_Layer: 5
   m_Name: Stars counter
   m_TagString: Untagged
@@ -160,6 +161,19 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: 400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &10891401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10891399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ce832c898b1fd45a13e3a653ab1cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarsText: {fileID: 987960914}
 --- !u!1 &46068178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,8 +2338,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945555345}
   m_HandleRect: {fileID: 945555344}
   m_Direction: 0
-  m_Value: -0.00000013563368
-  m_Size: 0.25
+  m_Value: 0
+  m_Size: 0.25000003
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3507,7 +3521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a88ae3634d82447a1bd48958d6463d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StarsText: {fileID: 528481574}
 --- !u!1 &745790776
 GameObject:
   m_ObjectHideFlags: 0
@@ -5959,6 +5972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1258002927}
+  - component: {fileID: 1258002928}
   m_Layer: 5
   m_Name: Stars counter
   m_TagString: Untagged
@@ -5987,6 +6001,19 @@ RectTransform:
   m_AnchoredPosition: {x: 950, y: 470}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &1258002928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258002926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ce832c898b1fd45a13e3a653ab1cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarsText: {fileID: 528481574}
 --- !u!1 &1354903982
 GameObject:
   m_ObjectHideFlags: 0
