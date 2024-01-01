@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 687935460466030455, guid: 36e967ebb583b99418c55ca16f364d8d, type: 3}
+      propertyPath: m_TagString
+      value: JustTree
+      objectReference: {fileID: 0}
     - target: {fileID: 1382231268112906588, guid: 36e967ebb583b99418c55ca16f364d8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.0415726
@@ -196,3 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundOnCollision: ThreeSound

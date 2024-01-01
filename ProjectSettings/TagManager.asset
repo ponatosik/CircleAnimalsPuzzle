@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelUI
+  - JustTree
   layers:
   - Default
   - TransparentFX

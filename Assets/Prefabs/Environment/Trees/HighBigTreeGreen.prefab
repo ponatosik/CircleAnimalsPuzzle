@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HighBigTreeGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1718521604881258984, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
+      propertyPath: m_TagString
+      value: JustTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3225865351061297009, guid: 399b47a7cec59224e8ba6c4bef487153, type: 3}
       propertyPath: _maxSize
       value: 5
@@ -241,3 +245,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundOnCollision: ThreeSound

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallTree
       objectReference: {fileID: 0}
+    - target: {fileID: 1044990290394988613, guid: 699e3ba9c64017c4f931f67143057df3, type: 3}
+      propertyPath: m_TagString
+      value: JustTree
+      objectReference: {fileID: 0}
     - target: {fileID: 1450766604019142254, guid: 699e3ba9c64017c4f931f67143057df3, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -183,3 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f70d0aaf950874bbfc1cd7e4c2a8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundOnCollision: ThreeSound

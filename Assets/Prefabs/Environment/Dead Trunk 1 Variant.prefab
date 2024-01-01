@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dead Trunk 1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6978312888051743460, guid: ec1ee497188e38c499a25e70b93e162c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978312888051743460, guid: ec1ee497188e38c499a25e70b93e162c, type: 3}
+      propertyPath: m_TagString
+      value: JustTree
+      objectReference: {fileID: 0}
     - target: {fileID: 8824054919577007311, guid: ec1ee497188e38c499a25e70b93e162c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
