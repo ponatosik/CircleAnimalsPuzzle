@@ -21,7 +21,7 @@ public class TextProWorkaround : MonoBehaviour
         if (_screenResolution.x != Screen.width || _screenResolution.y != Screen.height)
         {
             _text.enabled = false;
-            Debug.LogWarning($"{nameof(TextProWorkaround)}: Resolution have changed, updating text");
+            Debug.LogWarning($"{nameof(TextProWorkaround)}: Resolution have changed, updating text");   
             _screenResolution.x = Screen.width;
             _screenResolution.y = Screen.height;
             _text.enabled = true;
