@@ -1,20 +1,23 @@
 using UnityEngine;
 using CircleAnimalsPuzzle.Data;
 
-public class MainMenu : MonoBehaviour
+namespace CircleAnimalsPuzzle.UI
 {
-    public void Quit_game()
-    {
-        Application.Quit();
-    }
+	public class MainMenu : MonoBehaviour
+	{
+		public void Quit_game()
+		{
+			Application.Quit();
+		}
 
-    public void Continue_game()
-    {
-        Level LastUnlcockedLevel = LevelSystem.Instance.GetLastUnlcockedLevel();
+		public void Continue_game()
+		{
+			Level LastUnlcockedLevel = LevelSystem.Instance.GetLastUnlcockedLevel();
 
-        if (LastUnlcockedLevel != null)
-        {
-            LevelSystem.Instance.LoadLevel(LastUnlcockedLevel);
-        }
-    }
+			if (LastUnlcockedLevel != null)
+			{
+				LevelSystem.Instance.LoadLevel(LastUnlcockedLevel);
+			}
+		}
+	}
 }
