@@ -1,41 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
+using CircleAnimalsPuzzle.Systems;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-public class CollectableObject : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Collectables
 {
-	private bool _isActive;
-	private CollectablesCollection _collectablesPool;
-
-	void Start()
+	[RequireComponent(typeof(Collider2D))]
+	public class CollectableObject : MonoBehaviour
 	{
-		_isActive = gameObject.activeSelf;
-		GameManager.OnLevelStopped += Uncollect;
-		_collectablesPool = GameManager.Instance.Collectables;
-		_collectablesPool.Register(this);
-    }
+		private bool _isActive;
+		private CollectablesCollection _collectablesPool;
 
-	private void OnDestroy()
-	{
-		GameManager.OnLevelStopped -= Uncollect;
-	}
+		void Start()
+		{
+			_isActive = gameObject.activeSelf;
+			GameManager.OnLevelStopped += Uncollect;
+			_collectablesPool = GameManager.Instance.Collectables;
+			_collectablesPool.Register(this);
+		}
 
-	void OnTriggerEnter2D(Collider2D collision)
-	{
-		Collect();
-	}
+		private void OnDestroy()
+		{
+			GameManager.OnLevelStopped -= Uncollect;
+		}
 
-	private void Collect()
-	{
-        _collectablesPool.Collect(this);
-		gameObject.SetActive(false);
-        AudioManager.instance.PlaySound("AppleSound");
-    }
+		void OnTriggerEnter2D(Collider2D collision)
+		{
+			Collect();
+		}
 
-	private void Uncollect() 
-	{
-        _collectablesPool.Uncollect(this);
-		gameObject.SetActive(true);
+		private void Collect()
+		{
+			_collectablesPool.Collect(this);
+			gameObject.SetActive(false);
+			AudioManager.instance.PlaySound("AppleSound");
+		}
+
+		private void Uncollect()
+		{
+			_collectablesPool.Uncollect(this);
+			gameObject.SetActive(true);
+		}
 	}
 }

@@ -1,36 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-public class BouncyObject : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-    public float Bounciness = 1f;
 
-    [SerializeField]
-    private Collider2D _bouncyCollider;
-
-	private void OnCollisionEnter2D(Collision2D collision)
+	[RequireComponent(typeof(Collider2D))]
+	public class BouncyObject : MonoBehaviour
 	{
-        if (collision.otherCollider != _bouncyCollider) 
-        {
-            return;
-        }
+		public float Bounciness = 1f;
 
-        Vector2 facingVector = transform.up.normalized;
-		Rigidbody2D rigidbody = collision.rigidbody;
-		float speed = GetCollisionSpeed(collision);
+		[SerializeField]
+		private Collider2D _bouncyCollider;
 
-		rigidbody.AddForce(facingVector * speed * Bounciness, ForceMode2D.Impulse);
-	}
-
-	public float GetCollisionSpeed(Collision2D collision) 
-	{
-		if (collision.gameObject.TryGetComponent<CollisionWorkaround>(out CollisionWorkaround workaround))
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-            return workaround.GetLastFrameVelocity().magnitude;
-		}
-		return collision.relativeVelocity.magnitude;
-	}
+			if (collision.otherCollider != _bouncyCollider)
+			{
+				return;
+			}
 
+			Vector2 facingVector = transform.up.normalized;
+			Rigidbody2D rigidbody = collision.rigidbody;
+			float speed = GetCollisionSpeed(collision);
+
+			rigidbody.AddForce(facingVector * speed * Bounciness, ForceMode2D.Impulse);
+		}
+
+		public float GetCollisionSpeed(Collision2D collision)
+		{
+			if (collision.gameObject.TryGetComponent<CollisionWorkaround>(out CollisionWorkaround workaround))
+			{
+				return workaround.GetLastFrameVelocity().magnitude;
+			}
+			return collision.relativeVelocity.magnitude;
+		}
+
+	}
 }

@@ -1,8 +1,11 @@
 using System;
 
-[Serializable]
-public class LevelProgressData 
+namespace CircleAnimalsPuzzle.Data
 {
-	public bool Unlocked = false;
-	public int Stars = 0;
+	[Serializable]
+	public class LevelProgressData
+	{
+		public bool Unlocked = false;
+		public int Stars = 0;
+	}
 }

@@ -1,35 +1,38 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class ShakeAnimation : MonoBehaviour
+namespace CircleAnimalsPuzzle.Visuals
 {
-	[SerializeField]
-	private ParticleSystem _shakeParticles;
-	[SerializeField]
-	private bool _playOnStart = true;
-	private Animator _animator;
-
-	private void Start()
+	[RequireComponent(typeof(Animator))]
+	public class ShakeAnimation : MonoBehaviour
 	{
-		_animator = GetComponent<Animator>();
-		if (_playOnStart) 
+		[SerializeField]
+		private ParticleSystem _shakeParticles;
+		[SerializeField]
+		private bool _playOnStart = true;
+		private Animator _animator;
+
+		private void Start()
 		{
-			Shake();
+			_animator = GetComponent<Animator>();
+			if (_playOnStart)
+			{
+				Shake();
+			}
 		}
-	}
 
 
-	// Update is called once per frame
-	public void TrigerParticle()
-	{
-		if (_shakeParticles != null)
+		// Update is called once per frame
+		public void TrigerParticle()
 		{
-			_shakeParticles.Play();
+			if (_shakeParticles != null)
+			{
+				_shakeParticles.Play();
+			}
 		}
-	}
 
-	public void Shake() 
-	{
-		_animator.Play("Shake");
+		public void Shake()
+		{
+			_animator.Play("Shake");
+		}
 	}
 }

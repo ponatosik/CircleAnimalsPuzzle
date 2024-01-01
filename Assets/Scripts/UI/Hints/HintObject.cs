@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HintObject : MonoBehaviour
+namespace CircleAnimalsPuzzle.UI.Hints
 {
-	[SerializeField]
-	private SpriteRenderer _renderer;
-
-	public void Display()
+	public class HintObject : MonoBehaviour
 	{
-		_renderer.enabled = true;
-	}
+		[SerializeField]
+		private SpriteRenderer _renderer;
 
-	private void Awake()
-	{
-		_renderer.enabled = false;
+		public void Display()
+		{
+			_renderer.enabled = true;
+		}
+
+		private void Awake()
+		{
+			_renderer.enabled = false;
+		}
 	}
 }

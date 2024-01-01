@@ -1,30 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeColorEffect : ObjectEffect
+namespace CircleAnimalsPuzzle.Visuals
 {
-    [SerializeField]
-    private SpriteRenderer _sprite;
-	[SerializeField]
-	private Color _color;
-
-	private Color _defaultColor;
-
-	public override void Activate()
+	public class ChangeColorEffect : ObjectEffect
 	{
-		_sprite.color = _color;
+		[SerializeField]
+		private SpriteRenderer _sprite;
+		[SerializeField]
+		private Color _color;
+
+		private Color _defaultColor;
+
+		public override void Activate()
+		{
+			_sprite.color = _color;
+		}
+
+		public override void Deactivate()
+		{
+			_sprite.color = _defaultColor;
+		}
+
+		void Awake()
+		{
+			_defaultColor = _sprite.color;
+		}
 	}
-
-	public override void Deactivate()
-	{
-		_sprite.color = _defaultColor;
-	}
-
-	void Awake()
-    {
-        _defaultColor = _sprite.color;
-	}
-
-
 }

@@ -1,34 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DraggableObject : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Controlls
 {
-	Vector3 _draggPosOffset;
-	float _objectZPos;
-
-	void OnMouseDown()
+	public class DraggableObject : MonoBehaviour
 	{
-		if (GameManager.LevelStarted) 
+		Vector3 _draggPosOffset;
+		float _objectZPos;
+
+		void OnMouseDown()
 		{
-			return;
+			if (GameManager.LevelStarted)
+			{
+				return;
+			}
+
+			Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			_draggPosOffset = mouseWorldPos - (Vector2)transform.position;
+			_objectZPos = transform.position.z;
 		}
 
-		Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		_draggPosOffset = mouseWorldPos - (Vector2)transform.position;
-		_objectZPos = transform.position.z;
-	}
-
-	void OnMouseDrag()
-	{
-		if (GameManager.LevelStarted)
+		void OnMouseDrag()
 		{
-			return;
-		}
+			if (GameManager.LevelStarted)
+			{
+				return;
+			}
 
-		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		mouseWorldPos.z = _objectZPos;
-		mouseWorldPos -= _draggPosOffset;
-		transform.position = mouseWorldPos;
+			Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			mouseWorldPos.z = _objectZPos;
+			mouseWorldPos -= _draggPosOffset;
+			transform.position = mouseWorldPos;
+		}
 	}
 }

@@ -1,28 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class StarCounter : MonoBehaviour
+namespace CircleAnimalsPuzzle.UI
 {
-    [SerializeField]
-	private TextMeshProUGUI StarsText;
-
-	void Start()
+	public class StarCounter : MonoBehaviour
 	{
-		ShowStars();
-	}
+		[SerializeField]
+		private TextMeshProUGUI StarsText;
 
-	void OnEnable()
-	{
-		ShowStars();
-	}
+		void Start()
+		{
+			ShowStars();
+		}
 
-	private void ShowStars()
-	{
-		int collectedStars = LevelSystem.Instance.TotalStarsCollected;
-		int totalStars = LevelSystem.Instance.TotalStars;
+		void OnEnable()
+		{
+			ShowStars();
+		}
 
-		StarsText.text = collectedStars.ToString() + " / " + totalStars.ToString();
+		private void ShowStars()
+		{
+			int collectedStars = LevelSystem.Instance.TotalStarsCollected;
+			int totalStars = LevelSystem.Instance.TotalStars;
+
+			StarsText.text = collectedStars.ToString() + " / " + totalStars.ToString();
+		}
 	}
 }

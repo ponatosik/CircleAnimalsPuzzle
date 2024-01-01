@@ -1,3 +1,5 @@
+using CircleAnimalsPuzzle.Data;
+using CircleAnimalsPuzzle.Visuals;
 using System;
 using System.Collections;
 using System.Linq;
@@ -126,7 +128,7 @@ public class LevelSystem : MonoBehaviour
 	{
 		if (Instance != null)
 		{
-			Debug.LogError($"Attempt to create second instance of {nameof(GameManager)}");
+			Debug.LogError($"Attempt to create second instance of {nameof(LevelSystem)}");
 			Destroy(this);
 			return;
 		}

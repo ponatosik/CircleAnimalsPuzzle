@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public abstract class TransitionEffect: ObjectEffect
+namespace CircleAnimalsPuzzle.Visuals
 {
-    [field: SerializeField]
-    public float TransitionTime { get; set; } = 1f;
-    public abstract void BeginTransition();
-    public abstract void EndTransition();
+	public abstract class TransitionEffect : ObjectEffect
+	{
+		[field: SerializeField]
+		public float TransitionTime { get; set; } = 1f;
+		public abstract void BeginTransition();
+		public abstract void EndTransition();
 
-    public override void Activate() 
-    {
-        BeginTransition();
-	}
+		public override void Activate()
+		{
+			BeginTransition();
+		}
 
-    public override void Deactivate() 
-    {
-		EndTransition();
+		public override void Deactivate()
+		{
+			EndTransition();
+		}
 	}
 }

@@ -1,7 +1,5 @@
-using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
-
+using CircleAnimalsPuzzle.Data;
 
 public class MainMenu : MonoBehaviour
 {

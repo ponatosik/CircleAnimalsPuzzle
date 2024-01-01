@@ -1,47 +1,50 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class SimulateOnStart : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-    private Rigidbody2D _rigidbody;
-	private Vector3 _position;
-	private Vector3 _velocity;
-	private float _angularVelocity;
-
-	void Awake()
+	[RequireComponent(typeof(Rigidbody2D))]
+	public class SimulateOnStart : MonoBehaviour
 	{
-		_rigidbody = GetComponent<Rigidbody2D>();
-		_position = transform.position;
-		_velocity = _rigidbody.velocity;
-		_angularVelocity = _rigidbody.angularVelocity;
-	}
+		private Rigidbody2D _rigidbody;
+		private Vector3 _position;
+		private Vector3 _velocity;
+		private float _angularVelocity;
 
-	private void OnDestroy()
-	{
-		GameManager.OnLevelStarted -= StartSimulating;
-		GameManager.OnLevelStopped -= StopSimulating;
-	}
+		void Awake()
+		{
+			_rigidbody = GetComponent<Rigidbody2D>();
+			_position = transform.position;
+			_velocity = _rigidbody.velocity;
+			_angularVelocity = _rigidbody.angularVelocity;
+		}
 
-	void Start()
-    {
-        _rigidbody.simulated = GameManager.LevelStarted;
+		private void OnDestroy()
+		{
+			GameManager.OnLevelStarted -= StartSimulating;
+			GameManager.OnLevelStopped -= StopSimulating;
+		}
 
-        GameManager.OnLevelStarted += StartSimulating;
-		GameManager.OnLevelStopped += StopSimulating;
-	}
+		void Start()
+		{
+			_rigidbody.simulated = GameManager.LevelStarted;
 
-	private void StartSimulating()
-	{
-		_rigidbody.isKinematic = false;
-		_rigidbody.simulated = true;
-	}
+			GameManager.OnLevelStarted += StartSimulating;
+			GameManager.OnLevelStopped += StopSimulating;
+		}
 
-	private void StopSimulating()
-	{
-		transform.position = _position;
-		_rigidbody.velocity = _velocity;
-		_rigidbody.angularVelocity = _angularVelocity;
-		_rigidbody.isKinematic = true;
-		_rigidbody.useFullKinematicContacts = true;
+		private void StartSimulating()
+		{
+			_rigidbody.isKinematic = false;
+			_rigidbody.simulated = true;
+		}
+
+		private void StopSimulating()
+		{
+			transform.position = _position;
+			_rigidbody.velocity = _velocity;
+			_rigidbody.angularVelocity = _angularVelocity;
+			_rigidbody.isKinematic = true;
+			_rigidbody.useFullKinematicContacts = true;
+		}
 	}
 }

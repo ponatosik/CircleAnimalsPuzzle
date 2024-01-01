@@ -1,88 +1,89 @@
-using System.Collections;
-using System.Collections.Generic;
+using CircleAnimalsPuzzle.Visuals;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
-public class DisableOnIntersection : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-
-	[SerializeField]
-	private ObjectEffect _effect;
-    private Collider2D[] _colliders;
-	private bool _isDisabled;
-
-    void Start()
-    {
-		GameManager.OnLevelStarted += OnLevelStarted;
-		GameManager.OnLevelStopped += OnLevelStopped;
-
-		_colliders = GetComponents<Collider2D>();
-		_isDisabled = HasIntersection();
-		_effect.SetEffectActive(_isDisabled);
-	}
-
-	private void OnDestroy()
+	public class DisableOnIntersection : MonoBehaviour
 	{
-		GameManager.OnLevelStarted -= OnLevelStarted;
-		GameManager.OnLevelStopped -= OnLevelStopped;
-	}
 
-	void FixedUpdate()
-    {
-        if (GameManager.LevelStarted) 
-        {
-			return;
-		}
+		[SerializeField]
+		private ObjectEffect _effect;
+		private Collider2D[] _colliders;
+		private bool _isDisabled;
 
-		bool wasDisabled = _isDisabled;
-		_isDisabled = HasIntersection();
-
-		if (wasDisabled != _isDisabled) 
+		void Start()
 		{
+			GameManager.OnLevelStarted += OnLevelStarted;
+			GameManager.OnLevelStopped += OnLevelStopped;
+
+			_colliders = GetComponents<Collider2D>();
+			_isDisabled = HasIntersection();
 			_effect.SetEffectActive(_isDisabled);
 		}
-	}
 
-    private bool HasIntersection() 
-    {
-		Collider2D[] contactColliders = new Collider2D[10];
-        ContactFilter2D filter = new ContactFilter2D().NoFilter();
-
-		foreach (var collider in _colliders)
+		private void OnDestroy()
 		{
-			int hits = collider.OverlapCollider(filter, contactColliders);
-			for (int i = 0; i < hits; i++)
+			GameManager.OnLevelStarted -= OnLevelStarted;
+			GameManager.OnLevelStopped -= OnLevelStopped;
+		}
+
+		void FixedUpdate()
+		{
+			if (GameManager.LevelStarted)
 			{
-				if (!_colliders.Contains(contactColliders[i]))
-				{
-					return true;
-				}
+				return;
+			}
+
+			bool wasDisabled = _isDisabled;
+			_isDisabled = HasIntersection();
+
+			if (wasDisabled != _isDisabled)
+			{
+				_effect.SetEffectActive(_isDisabled);
 			}
 		}
 
-		return false;
-	}
-
-
-	private void OnLevelStarted() 
-	{
-		if (!_isDisabled) 
+		private bool HasIntersection()
 		{
-			return;
+			Collider2D[] contactColliders = new Collider2D[10];
+			ContactFilter2D filter = new ContactFilter2D().NoFilter();
+
+			foreach (var collider in _colliders)
+			{
+				int hits = collider.OverlapCollider(filter, contactColliders);
+				for (int i = 0; i < hits; i++)
+				{
+					if (!_colliders.Contains(contactColliders[i]))
+					{
+						return true;
+					}
+				}
+			}
+
+			return false;
 		}
 
-        foreach (var collider in _colliders)
-        {
-			collider.enabled = false;
-		}
-    }
 
-	private void OnLevelStopped()
-	{
-		foreach (var collider in _colliders)
+		private void OnLevelStarted()
 		{
-			collider.enabled = true;
+			if (!_isDisabled)
+			{
+				return;
+			}
+
+			foreach (var collider in _colliders)
+			{
+				collider.enabled = false;
+			}
+		}
+
+		private void OnLevelStopped()
+		{
+			foreach (var collider in _colliders)
+			{
+				collider.enabled = true;
+			}
 		}
 	}
 }

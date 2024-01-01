@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public abstract class ObjectEffect : MonoBehaviour
+namespace CircleAnimalsPuzzle.Visuals
 {
-    public abstract void Activate();
-    public abstract void Deactivate();
-    public void SetEffectActive(bool activate) 
-    {
-		if (activate)
+	public abstract class ObjectEffect : MonoBehaviour
+	{
+		public abstract void Activate();
+		public abstract void Deactivate();
+		public void SetEffectActive(bool activate)
 		{
-			Activate();
-		}
-		else
-		{
-			Deactivate();
+			if (activate)
+			{
+				Activate();
+			}
+			else
+			{
+				Deactivate();
+			}
 		}
 	}
 }

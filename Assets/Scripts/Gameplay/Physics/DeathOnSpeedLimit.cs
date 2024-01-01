@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class DeathOnSpeedLimit : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-    [SerializeField]
-    private float _speedLimit = float.PositiveInfinity;
-
-	private Rigidbody2D _rigidbody;
-
-	void Start()
+	[RequireComponent(typeof(Rigidbody2D))]
+	public class DeathOnSpeedLimit : MonoBehaviour
 	{
-		_rigidbody = GetComponent<Rigidbody2D>();
-	}
+		[SerializeField]
+		private float _speedLimit = float.PositiveInfinity;
 
-	void FixedUpdate()
-    {
-        if(_rigidbody.velocity.magnitude > _speedLimit) 
+		private Rigidbody2D _rigidbody;
+
+		void Start()
 		{
-			GameManager.Instance.StopLevel();
-		}        
-    }
+			_rigidbody = GetComponent<Rigidbody2D>();
+		}
+
+		void FixedUpdate()
+		{
+			if (_rigidbody.velocity.magnitude > _speedLimit)
+			{
+				GameManager.Instance.StopLevel();
+			}
+		}
+	}
 }

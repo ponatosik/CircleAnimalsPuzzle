@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class CollisionWorkaround : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-	private Vector2 _velocity = new Vector2();
-	private Rigidbody2D _rigidbody2D;
-
-	public Vector2 GetLastFrameVelocity() 
+	[RequireComponent(typeof(Rigidbody2D))]
+	public class CollisionWorkaround : MonoBehaviour
 	{
-		return _velocity;
-	}
+		private Vector2 _velocity = new Vector2();
+		private Rigidbody2D _rigidbody2D;
 
-	private void Start()
-	{
-		_rigidbody2D = GetComponent<Rigidbody2D>();
-	}
+		public Vector2 GetLastFrameVelocity()
+		{
+			return _velocity;
+		}
 
-	private void FixedUpdate()
-	{
-		_velocity = _rigidbody2D.velocity;
+		private void Start()
+		{
+			_rigidbody2D = GetComponent<Rigidbody2D>();
+		}
+
+		private void FixedUpdate()
+		{
+			_velocity = _rigidbody2D.velocity;
+		}
 	}
 }

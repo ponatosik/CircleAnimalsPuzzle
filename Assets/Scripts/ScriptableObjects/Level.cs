@@ -1,6 +1,8 @@
-using System;
+using CircleAnimalsPuzzle.Data;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
+namespace CircleAnimalsPuzzle.Gameplay.Data;
+
 
 [CreateAssetMenu(fileName = "Level", menuName = "Scriptable objects/Level")]
 public class Level : ScriptableObject

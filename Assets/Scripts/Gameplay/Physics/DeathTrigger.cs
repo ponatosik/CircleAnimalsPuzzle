@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathTrigger : MonoBehaviour
+namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            GameManager.Instance.StopLevel();
-        }
-    }
+	public class DeathTrigger : MonoBehaviour
+	{
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.CompareTag("Player"))
+			{
+				GameManager.Instance.StopLevel();
+			}
+		}
+	}
 }
