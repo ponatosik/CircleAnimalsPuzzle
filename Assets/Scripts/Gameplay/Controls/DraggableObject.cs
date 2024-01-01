@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CircleAnimalsPuzzle.Gameplay.Controlls
+namespace CircleAnimalsPuzzle.Gameplay.Controls
 {
 	public class DraggableObject : MonoBehaviour
 	{

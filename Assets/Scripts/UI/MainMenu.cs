@@ -12,7 +12,7 @@ namespace CircleAnimalsPuzzle.UI
 
 		public void Continue_game()
 		{
-			Level LastUnlcockedLevel = LevelSystem.Instance.GetLastUnlcockedLevel();
+			Level LastUnlcockedLevel = LevelSystem.Instance.GetLastUnlockedLevel();
 
 			if (LastUnlcockedLevel != null)
 			{

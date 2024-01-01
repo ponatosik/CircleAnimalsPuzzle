@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CircleAnimalsPuzzle.Gameplay.Controlls
+namespace CircleAnimalsPuzzle.Gameplay.Controls
 {
 	public class StartLevelOnTouch : MonoBehaviour
 	{

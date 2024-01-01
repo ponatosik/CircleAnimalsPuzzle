@@ -31,7 +31,7 @@ public class LevelSystem : MonoBehaviour
 	public int TotalStarsCollected => _levels.Select(level => level.Stars).Sum();
 
 
-	public Level GetLastUnlcockedLevel()
+	public Level GetLastUnlockedLevel()
 	{
 		int levelIndex = PlayerPrefs.GetInt(_lastUnlcockedLevelPrefsStr, -1);
 		if (levelIndex == -1 || levelIndex >= _levels.Length) 
@@ -145,7 +145,7 @@ public class LevelSystem : MonoBehaviour
 		}
 		else 
 		{
-			// If the game is run from engine, then try to undestand which level is loaded
+			// If the game is run from engine, then try to understand which level is loaded
 			LoadedLevel = TryFindLoadedLevel();
 		}
 
