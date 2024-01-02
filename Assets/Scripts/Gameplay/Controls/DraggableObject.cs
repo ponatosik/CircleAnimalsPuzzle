@@ -4,8 +4,8 @@ namespace CircleAnimalsPuzzle.Gameplay.Controls
 {
 	public class DraggableObject : MonoBehaviour
 	{
-		Vector3 _draggPosOffset;
-		float _objectZPos;
+		private Vector3 _draggPosOffset;
+		private float _objectZPos;
 
 		void OnMouseDown()
 		{

@@ -6,6 +6,7 @@ namespace CircleAnimalsPuzzle.Visuals
 	{
 		[field: SerializeField]
 		public float TransitionTime { get; set; } = 1f;
+
 		public abstract void BeginTransition();
 		public abstract void EndTransition();
 

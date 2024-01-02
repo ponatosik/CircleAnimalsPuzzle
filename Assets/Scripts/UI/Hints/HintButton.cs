@@ -5,7 +5,6 @@ namespace CircleAnimalsPuzzle.UI.Hints
 {
 	public class HintButton : MonoBehaviour
 	{
-
 		public void DisplayRandomHint()
 		{
 			HintManager hintManager = HintManager.Instance;

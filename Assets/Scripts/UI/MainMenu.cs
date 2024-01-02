@@ -5,12 +5,12 @@ namespace CircleAnimalsPuzzle.UI
 {
 	public class MainMenu : MonoBehaviour
 	{
-		public void Quit_game()
+		public void QuitGame()
 		{
 			Application.Quit();
 		}
 
-		public void Continue_game()
+		public void ContinueGame()
 		{
 			Level LastUnlcockedLevel = LevelSystem.Instance.GetLastUnlockedLevel();
 

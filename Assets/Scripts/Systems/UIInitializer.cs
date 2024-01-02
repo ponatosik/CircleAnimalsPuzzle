@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIInitializer : MonoBehaviour
 {
 	[SerializeField]
-	private GameObject UIPrefab;
+	private GameObject _UIPrefab;
 
 	private void Awake()
 	{
-		if (!GameObject.FindGameObjectWithTag(UIPrefab.tag)) 
+		if (!GameObject.FindGameObjectWithTag(_UIPrefab.tag)) 
 		{
-			Instantiate(UIPrefab);
+			Instantiate(_UIPrefab);
 		}
 	}
 }

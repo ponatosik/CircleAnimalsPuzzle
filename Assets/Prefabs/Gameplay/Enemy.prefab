@@ -223,9 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95159eacb0a4e14e832ff4ec63a8ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 3
-  moveDuration: 3
-  trajectoryCollider: {fileID: 6674474114053703464}
+  MoveDistance: 3
+  MoveDuration: 3
+  TrajectoryCollider: {fileID: 6674474114053703464}
 --- !u!114 &2314568482945326665
 MonoBehaviour:
   m_ObjectHideFlags: 0

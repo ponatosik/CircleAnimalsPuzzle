@@ -7,10 +7,8 @@ namespace CircleAnimalsPuzzle.Data
 	{
 		public string SceneName = "Level";
 		public int MaxStars = 3;
-
 		public bool Unlocked => GetProgressData().Unlocked;
 		public int Stars => GetProgressData().Stars;
-
 
 		public void Unlock()
 		{

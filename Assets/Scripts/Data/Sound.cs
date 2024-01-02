@@ -1,26 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
 namespace CircleAnimalsPuzzle.Data
 {
 	[System.Serializable]
 	public class Sound
 	{
-
-		public string name;
-
-		public AudioClip clip;
+		public string Name;
+		public AudioClip Clip;
+		public bool Loop = false;
 
 		[Range(0f, 1f)]
-		public float volume = 1;
-
+		public float Volume = 1;
 		[Range(0f, 3f)]
-		public float pitch = 1;
-
-		public bool loop = false;
+		public float Pitch = 1;
 
 		[HideInInspector]
-		public AudioSource source;
-
+		public AudioSource Source;
 	}
 }

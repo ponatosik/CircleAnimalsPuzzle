@@ -294,6 +294,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
+      propertyPath: MoveDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
+      propertyPath: MoveDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
       propertyPath: moveDistance
       value: 4
       objectReference: {fileID: 0}
@@ -1296,6 +1304,10 @@ PrefabInstance:
     - target: {fileID: 3054054606033055322, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
+      propertyPath: MoveDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
       propertyPath: moveDuration

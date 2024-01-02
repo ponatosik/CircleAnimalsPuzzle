@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
-
 	[RequireComponent(typeof(Collider2D))]
 	public class BouncyObject : MonoBehaviour
 	{
@@ -33,6 +32,5 @@ namespace CircleAnimalsPuzzle.Gameplay.Physics
 			}
 			return collision.relativeVelocity.magnitude;
 		}
-
 	}
 }

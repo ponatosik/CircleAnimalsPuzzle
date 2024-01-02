@@ -8,11 +8,8 @@ namespace CircleAnimalsPuzzle.Visuals
 	{
 		[SerializeField]
 		private Image _sprite;
-
-
 		private Sequence _fadeInTweener;
 		private Sequence _fadeOutTweener;
-
 
 		public override void BeginTransition()
 		{

@@ -409,6 +409,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
+      propertyPath: MoveDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395438976071404021, guid: ddd80d4cbd17e7649ad39c18f838b568, type: 3}
       propertyPath: moveDistance
       value: 5
       objectReference: {fileID: 0}

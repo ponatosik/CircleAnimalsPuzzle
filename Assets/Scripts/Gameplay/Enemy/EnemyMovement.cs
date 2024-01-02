@@ -1,65 +1,62 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CircleAnimalsPuzzle.Gameplay.Enemy
 {
 	[RequireComponent(typeof(LineRenderer))]
 	public class EnemyMovement : MonoBehaviour
 	{
-		public float moveDistance = 5f;
-		public float moveDuration = 2f;
+		public float MoveDistance = 5f;
+		public float MoveDuration = 2f;
 
-		private Vector3 startPosition;
-		private LineRenderer lineRenderer;
+		private Vector3 _startPosition;
+		private LineRenderer _lineRenderer;
 
 		[SerializeField]
-		private BoxCollider2D trajectoryCollider;
+		private BoxCollider2D TrajectoryCollider;
 
 		void Start()
 		{
-			startPosition = transform.position;
-			lineRenderer = GetComponent<LineRenderer>();
+			_startPosition = transform.position;
+			_lineRenderer = GetComponent<LineRenderer>();
 
-			lineRenderer.positionCount = 2;
-			lineRenderer.SetPosition(0, startPosition);
-			lineRenderer.SetPosition(1, startPosition);
+			_lineRenderer.positionCount = 2;
+			_lineRenderer.SetPosition(0, _startPosition);
+			_lineRenderer.SetPosition(1, _startPosition);
 
-			lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+			_lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
-			trajectoryCollider.size += new Vector2(0, moveDuration / 2);
-			trajectoryCollider.offset -= new Vector2(0, moveDuration / 4);
+			TrajectoryCollider.size += new Vector2(0, MoveDuration / 2);
+			TrajectoryCollider.offset -= new Vector2(0, MoveDuration / 4);
 
 			Movement();
 		}
 
 		void Movement()
 		{
-			float targetY = startPosition.y - moveDistance;
+			float targetY = _startPosition.y - MoveDistance;
 
-			transform.DOMoveY(targetY, moveDuration / 2)
+			transform.DOMoveY(targetY, MoveDuration / 2)
 				.SetEase(Ease.InOutQuad)
 				.OnUpdate(() =>
 				{
-					float currentY = transform.position.y;
-					float colliderSizeY = Mathf.Clamp(startPosition.y - currentY, 0f, moveDistance);
-
-
-					lineRenderer.SetPosition(0, startPosition);
-					lineRenderer.SetPosition(1, transform.position);
+					_lineRenderer.SetPosition(0, _startPosition);
+					_lineRenderer.SetPosition(1, transform.position);
 				})
 				.OnComplete(() =>
 				{
-					transform.DOMoveY(startPosition.y, moveDuration / 2)
+					transform.DOMoveY(_startPosition.y, MoveDuration / 2)
 						.SetEase(Ease.InOutQuad)
 						.OnUpdate(() =>
 						{
-							lineRenderer.SetPosition(0, startPosition);
-							lineRenderer.SetPosition(1, transform.position);
+							_lineRenderer.SetPosition(0, _startPosition);
+							_lineRenderer.SetPosition(1, transform.position);
 						})
 						.OnComplete(() =>
 						{
-							lineRenderer.SetPosition(0, startPosition);
-							lineRenderer.SetPosition(1, startPosition);
+							_lineRenderer.SetPosition(0, _startPosition);
+							_lineRenderer.SetPosition(1, _startPosition);
 
 							Movement();
 						});

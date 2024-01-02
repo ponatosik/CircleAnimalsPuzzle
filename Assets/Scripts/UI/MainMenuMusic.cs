@@ -1,23 +1,24 @@
 using CircleAnimalsPuzzle.Systems;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CircleAnimalsPuzzle.UI
 {
 	public class MainMenuMusic : MonoBehaviour
 	{
-		public Slider musicSlider;
-		public Slider soundSlider;
+		public Slider _musicSlider;
+		public Slider _soundSlider;
 
 		void Start()
 		{
-			AudioManager.instance.PlayMusic("MainMenuMusic", 1);
-			AudioManager.instance.PlayMusic("MainMenuMusic");
+			AudioManager.Instance.PlayMusic("MainMenuMusic", 1);
+			AudioManager.Instance.PlayMusic("MainMenuMusic");
 
-			if (AudioManager.instance != null)
+			if (AudioManager.Instance != null)
 			{
-				musicSlider.onValueChanged.AddListener(SetMusicVolume);
-				soundSlider.onValueChanged.AddListener(SetSoundVolume);
+				_musicSlider.onValueChanged.AddListener(SetMusicVolume);
+				_soundSlider.onValueChanged.AddListener(SetSoundVolume);
 			}
 			else
 			{
@@ -27,12 +28,12 @@ namespace CircleAnimalsPuzzle.UI
 
 		private void SetMusicVolume(float volume)
 		{
-			AudioManager.instance.SetMusicVolume(volume);
+			AudioManager.Instance.SetMusicVolume(volume);
 		}
 
 		private void SetSoundVolume(float volume)
 		{
-			AudioManager.instance.SetSoundVolume(volume);
+			AudioManager.Instance.SetSoundVolume(volume);
 		}
 	}
 }

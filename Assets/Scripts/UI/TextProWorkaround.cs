@@ -7,7 +7,7 @@ namespace CircleAnimalsPuzzle.UI
 	public class TextProWorkaround : MonoBehaviour
 	{
 		private TextProOnACurve _text;
-		Vector2Int _screenResolution = new();
+		private Vector2Int _screenResolution = new();
 
 		void Start()
 		{

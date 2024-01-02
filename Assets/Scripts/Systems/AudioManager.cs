@@ -7,27 +7,26 @@ namespace CircleAnimalsPuzzle.Systems
 {
 	public class AudioManager : MonoBehaviour
 	{
+		public static AudioManager Instance;
 
-		public static AudioManager instance;
-
-		private float originalMusicVolume;
-		private float originalSoundVolume;
+		private float _originalMusicVolume;
+		private float _originalSoundVolume;
 
 		public Sound[] _music;
 		public Sound[] _sounds;
 
-		private Coroutine fadingCoroutine;
+		private Coroutine _fadingCoroutine;
 
 		void Awake()
 		{
-			if (instance != null)
+			if (Instance != null)
 			{
 				Destroy(gameObject);
 				return;
 			}
 			else
 			{
-				instance = this;
+				Instance = this;
 				DontDestroyOnLoad(gameObject);
 			}
 
@@ -44,29 +43,29 @@ namespace CircleAnimalsPuzzle.Systems
 
 		void InitializeAudioSource(Sound sound)
 		{
-			sound.source = gameObject.AddComponent<AudioSource>();
-			sound.source.clip = sound.clip;
-			sound.source.volume = sound.volume;
-			sound.source.pitch = sound.pitch;
-			sound.source.loop = sound.loop;
+			sound.Source = gameObject.AddComponent<AudioSource>();
+			sound.Source.clip = sound.Clip;
+			sound.Source.volume = sound.Volume;
+			sound.Source.pitch = sound.Pitch;
+			sound.Source.loop = sound.Loop;
 		}
 
 		public void PlayMusic(string musicName, float fadeDuration = 0f)
 		{
-			Sound music = Array.Find(_music, item => item.name == musicName);
+			Sound music = Array.Find(_music, item => item.Name == musicName);
 			if (music != null)
 			{
 				if (fadeDuration > 0)
 				{
-					if (fadingCoroutine != null)
+					if (_fadingCoroutine != null)
 					{
-						StopCoroutine(fadingCoroutine);
+						StopCoroutine(_fadingCoroutine);
 					}
-					fadingCoroutine = StartCoroutine(FadeInMusic(music, fadeDuration));
+					_fadingCoroutine = StartCoroutine(FadeInMusic(music, fadeDuration));
 				}
 				else
 				{
-					music.source.Play();
+					music.Source.Play();
 				}
 			}
 			else
@@ -78,53 +77,53 @@ namespace CircleAnimalsPuzzle.Systems
 		IEnumerator FadeInMusic(Sound music, float duration)
 		{
 			float startVolume = 0f;
-			music.source.volume = startVolume;
-			music.source.Play();
+			music.Source.volume = startVolume;
+			music.Source.Play();
 
 			float elapsedTime = 0f;
 
 			while (elapsedTime < duration)
 			{
-				music.source.volume = Mathf.Lerp(startVolume, music.volume, elapsedTime / duration);
+				music.Source.volume = Mathf.Lerp(startVolume, music.Volume, elapsedTime / duration);
 				elapsedTime += Time.deltaTime;
 				yield return null;
 			}
 
-			music.source.volume = music.volume;
+			music.Source.volume = music.Volume;
 		}
 
 		IEnumerator FadeOutMusic(Sound music, float duration)
 		{
-			float startVolume = music.volume;
+			float startVolume = music.Volume;
 			float elapsedTime = 0f;
 
 			while (elapsedTime < duration)
 			{
-				music.source.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
+				music.Source.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
 				elapsedTime += Time.deltaTime;
 				yield return null;
 			}
 
-			music.source.Stop();
-			music.source.volume = startVolume;
+			music.Source.Stop();
+			music.Source.volume = startVolume;
 		}
 
 		public void StopMusic(string musicName, float fadeDuration = 0f)
 		{
-			Sound music = Array.Find(_music, item => item.name == musicName);
+			Sound music = Array.Find(_music, item => item.Name == musicName);
 			if (music != null)
 			{
 				if (fadeDuration > 0)
 				{
-					if (fadingCoroutine != null)
+					if (_fadingCoroutine != null)
 					{
-						StopCoroutine(fadingCoroutine);
+						StopCoroutine(_fadingCoroutine);
 					}
-					fadingCoroutine = StartCoroutine(FadeOutMusic(music, fadeDuration));
+					_fadingCoroutine = StartCoroutine(FadeOutMusic(music, fadeDuration));
 				}
 				else
 				{
-					music.source.Stop();
+					music.Source.Stop();
 				}
 			}
 			else
@@ -135,10 +134,10 @@ namespace CircleAnimalsPuzzle.Systems
 
 		public void PlaySound(string soundName)
 		{
-			Sound sound = Array.Find(_sounds, item => item.name == soundName);
+			Sound sound = Array.Find(_sounds, item => item.Name == soundName);
 			if (sound != null)
 			{
-				sound.source.Play();
+				sound.Source.Play();
 			}
 			else
 			{
@@ -148,10 +147,10 @@ namespace CircleAnimalsPuzzle.Systems
 
 		public void StopSound(string soundName)
 		{
-			Sound sound = Array.Find(_sounds, item => item.name == soundName);
+			Sound sound = Array.Find(_sounds, item => item.Name == soundName);
 			if (sound != null)
 			{
-				sound.source.Stop();
+				sound.Source.Stop();
 			}
 			else
 			{
@@ -163,7 +162,7 @@ namespace CircleAnimalsPuzzle.Systems
 		{
 			foreach (Sound s in _music)
 			{
-				s.source.volume = volume;
+				s.Source.volume = volume;
 			}
 		}
 
@@ -171,40 +170,40 @@ namespace CircleAnimalsPuzzle.Systems
 		{
 			foreach (Sound s in _sounds)
 			{
-				s.source.volume = volume;
+				s.Source.volume = volume;
 			}
 		}
 
 		public float GetMusicVolume()
 		{
-			return _music.Length > 0 ? _music[0].source.volume : 0f;
+			return _music.Length > 0 ? _music[0].Source.volume : 0f;
 		}
 
 		public float GetSoundVolume()
 		{
-			return _sounds.Length > 0 ? _sounds[0].source.volume : 0f;
+			return _sounds.Length > 0 ? _sounds[0].Source.volume : 0f;
 		}
 
 		public void MuteSound()
 		{
-			originalSoundVolume = GetSoundVolume();
+			_originalSoundVolume = GetSoundVolume();
 			SetSoundVolume(0);
 		}
 
 		public void MuteMusic()
 		{
-			originalMusicVolume = GetMusicVolume();
+			_originalMusicVolume = GetMusicVolume();
 			SetMusicVolume(0);
 		}
 
 		public void UnmuteSound()
 		{
-			SetSoundVolume(originalSoundVolume);
+			SetSoundVolume(_originalSoundVolume);
 		}
 
 		public void UnmuteMusic()
 		{
-			SetMusicVolume(originalMusicVolume);
+			SetMusicVolume(_originalMusicVolume);
 		}
 	}
 }

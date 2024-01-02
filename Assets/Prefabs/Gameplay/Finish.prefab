@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f9ee4a3e284b94c951ba1c16cbe638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimationController: {fileID: 6100335542100607734}
+  _animationController: {fileID: 6100335542100607734}
 --- !u!1 &4865873374195584476
 GameObject:
   m_ObjectHideFlags: 0

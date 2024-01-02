@@ -6,12 +6,10 @@ namespace CircleAnimalsPuzzle.Gameplay.Collectables
 	[RequireComponent(typeof(Collider2D))]
 	public class CollectableObject : MonoBehaviour
 	{
-		private bool _isActive;
 		private CollectablesCollection _collectablesPool;
 
 		void Start()
 		{
-			_isActive = gameObject.activeSelf;
 			GameManager.OnLevelStopped += Uncollect;
 			_collectablesPool = GameManager.Instance.Collectables;
 			_collectablesPool.Register(this);
@@ -31,7 +29,7 @@ namespace CircleAnimalsPuzzle.Gameplay.Collectables
 		{
 			_collectablesPool.Collect(this);
 			gameObject.SetActive(false);
-			AudioManager.instance.PlaySound("AppleSound");
+			AudioManager.Instance.PlaySound("AppleSound");
 		}
 
 		private void Uncollect()

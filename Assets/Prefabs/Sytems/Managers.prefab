@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7748b183821cfa9458e329d6371b21d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  systemsPrefab: {fileID: 1990226904830917989, guid: df68214c53ed2ee4aa37ca981d87cfc4, type: 3}
+  _systemsPrefab: {fileID: 1990226904830917989, guid: df68214c53ed2ee4aa37ca981d87cfc4, type: 3}
 --- !u!1 &1984032502787686188
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082ac33c06035ee488c78b3a59607dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hints: []
+  _displayedHints: []
 --- !u!1 &2397734906744317474
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2424bec259ef4e44c94ea644f2c9c3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIPrefab: {fileID: 7938132814426356727, guid: eebeca467705a6b4ba70e276ae54a042, type: 3}
+  _UIPrefab: {fileID: 7938132814426356727, guid: eebeca467705a6b4ba70e276ae54a042, type: 3}
 --- !u!1 &3202603551861345196
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Collectables>k__BackingField:
     _collectedObjects: []
+    _allLevelCollectables: []
 --- !u!114 &1135264777396683632
 MonoBehaviour:
   m_ObjectHideFlags: 0

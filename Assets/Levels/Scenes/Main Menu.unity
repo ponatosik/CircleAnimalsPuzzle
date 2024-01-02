@@ -1016,8 +1016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71e9bc5a1028364aa8d735873a88283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSlider: {fileID: 448893539}
-  soundSlider: {fileID: 46068179}
+  _musicSlider: {fileID: 448893539}
+  _soundSlider: {fileID: 46068179}
 --- !u!1 &193747242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,8 +2338,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945555345}
   m_HandleRect: {fileID: 945555344}
   m_Direction: 0
-  m_Value: -0.00000004521122
-  m_Size: 0.24999997
+  m_Value: 0
+  m_Size: 0.24999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8991,7 +8991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7748b183821cfa9458e329d6371b21d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  systemsPrefab: {fileID: 1990226904830917989, guid: df68214c53ed2ee4aa37ca981d87cfc4, type: 3}
+  _systemsPrefab: {fileID: 1990226904830917989, guid: df68214c53ed2ee4aa37ca981d87cfc4, type: 3}
 --- !u!1 &857346093413721773
 GameObject:
   m_ObjectHideFlags: 0

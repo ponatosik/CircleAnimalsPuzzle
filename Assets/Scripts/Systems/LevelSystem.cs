@@ -10,7 +10,10 @@ public class LevelSystem : MonoBehaviour
 {
 	public static LevelSystem Instance { get; private set; }
 
-    [SerializeField]
+	public Level LoadedLevel { get; private set; } = null;
+	public Level PreviousLoadedLevel { get; private set; } = null;
+
+	[SerializeField]
     private TransitionEffect _transition;
 
     [SerializeField]
@@ -24,12 +27,9 @@ public class LevelSystem : MonoBehaviour
 	[SerializeField]
 	private string _lastUnlcockedLevelPrefsStr = "Levels.LastUnlocked";
 
-	public Level LoadedLevel { get; private set; } = null;
-	public Level PreviousLoadedLevel { get; private set; } = null;
-
 	public int TotalStars => _levels.Select(level => level.MaxStars).Sum();
 	public int TotalStarsCollected => _levels.Select(level => level.Stars).Sum();
-
+	public Level[] Levels => _levels;
 
 	public Level GetLastUnlockedLevel()
 	{
@@ -47,9 +47,6 @@ public class LevelSystem : MonoBehaviour
 
         return level;
 	}
-	
-
-	public Level[] Levels => _levels;
 
     public Level[] GetLevels() 
 	{

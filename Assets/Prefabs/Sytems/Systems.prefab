@@ -89,55 +89,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _music:
-  - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
-    volume: 0.05
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
+  - Name: MainMenuMusic
+    Clip: {fileID: 8300000, guid: 9c42afde1b591304fb9aaba69ee7f5fc, type: 3}
+    Volume: 0.05
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
   _sounds:
-  - name: BounceSound
-    clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: AppleSound
-    clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ThreeSound
-    clip: {fileID: 8300000, guid: 56126b0abe57c8b4588a70918220f3aa, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: FinishSound
-    clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
-    volume: 0.07
-    pitch: 0.943
-    loop: 0
-    source: {fileID: 0}
-  - name: LevelEndStars1
-    clip: {fileID: 8300000, guid: ce7569ad42fe2d24591f21dd2f43de62, type: 3}
-    volume: 0.07
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: LevelEndStars2
-    clip: {fileID: 8300000, guid: 4eddcdf3ebabb954c84e2de9907859c2, type: 3}
-    volume: 0.07
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: LevelEndStars3
-    clip: {fileID: 8300000, guid: 5d5d46f82530ff946923337aecf614fb, type: 3}
-    volume: 0.07
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  - Name: BounceSound
+    Clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: AppleSound
+    Clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ThreeSound
+    Clip: {fileID: 8300000, guid: 56126b0abe57c8b4588a70918220f3aa, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: FinishSound
+    Clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+    Volume: 0.07
+    Pitch: 0.943
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: LevelEndStars1
+    Clip: {fileID: 8300000, guid: ce7569ad42fe2d24591f21dd2f43de62, type: 3}
+    Volume: 0.07
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: LevelEndStars2
+    Clip: {fileID: 8300000, guid: 4eddcdf3ebabb954c84e2de9907859c2, type: 3}
+    Volume: 0.07
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: LevelEndStars3
+    Clip: {fileID: 8300000, guid: 5d5d46f82530ff946923337aecf614fb, type: 3}
+    Volume: 0.07
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
 --- !u!114 &5975024396788332701
 MonoBehaviour:
   m_ObjectHideFlags: 0

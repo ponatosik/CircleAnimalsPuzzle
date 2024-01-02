@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SystemInitializer : MonoBehaviour
 {
 	[SerializeField]
-	private Systems systemsPrefab;
+	private Systems _systemsPrefab;
 
     private void Awake()
 	{
 		if (LevelSystem.Instance == null)
 		{
-			Instantiate(systemsPrefab);
+			Instantiate(_systemsPrefab);
 		}
 	}
 }

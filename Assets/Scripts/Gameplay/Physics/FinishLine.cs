@@ -11,7 +11,7 @@ namespace CircleAnimalsPuzzle.Gameplay.Physics
 		{
 			if (other.CompareTag("Player"))
 			{
-				AudioManager.instance.PlaySound("FinishSound");
+				AudioManager.Instance.PlaySound("FinishSound");
 
 				StartCoroutine(LoadNextSceneWithDelay(2f));
 			}

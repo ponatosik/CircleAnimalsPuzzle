@@ -1,34 +1,34 @@
 using CircleAnimalsPuzzle.Systems;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CircleAnimalsPuzzle.UI
 {
 	public class MuteButtons : MonoBehaviour
 	{
-		public Sprite soundOnSprite;
-		public Sprite soundOffSprite;
-		public Sprite musicOnSprite;
-		public Sprite musicOffSprite;
+		public Sprite SoundOnSprite;
+		public Sprite SoundOffSprite;
+		public Sprite MusicOnSprite;
+		public Sprite MusicOffSprite;
+		public Button SoundButton;
+		public Button MusicButton;
 
-		public Button soundButton;
-		public Button musicButton;
-
-		private bool isSoundMuted = false;
-		private bool isMusicMuted = false;
+		private bool _isSoundMuted = false;
+		private bool _isMusicMuted = false;
 
 		void ToggleSoundMute()
 		{
-			isSoundMuted = !isSoundMuted;
+			_isSoundMuted = !_isSoundMuted;
 
-			if (isSoundMuted)
+			if (_isSoundMuted)
 			{
-				AudioManager.instance.MuteSound();
+				AudioManager.Instance.MuteSound();
 				Debug.Log("Sound Muted");
 			}
 			else
 			{
-				AudioManager.instance.UnmuteSound();
+				AudioManager.Instance.UnmuteSound();
 				Debug.Log("Sound Unmuted");
 			}
 
@@ -37,16 +37,16 @@ namespace CircleAnimalsPuzzle.UI
 
 		void ToggleMusicMute()
 		{
-			isMusicMuted = !isMusicMuted;
+			_isMusicMuted = !_isMusicMuted;
 
-			if (isMusicMuted)
+			if (_isMusicMuted)
 			{
-				AudioManager.instance.MuteMusic();
+				AudioManager.Instance.MuteMusic();
 				Debug.Log("Music Muted");
 			}
 			else
 			{
-				AudioManager.instance.UnmuteMusic();
+				AudioManager.Instance.UnmuteMusic();
 				Debug.Log("Music Unmuted");
 			}
 
@@ -55,18 +55,26 @@ namespace CircleAnimalsPuzzle.UI
 
 		void UpdateSoundButtonImage()
 		{
-			if (soundButton != null)
-				soundButton.image.sprite = isSoundMuted ? soundOffSprite : soundOnSprite;
-			else
+			if (SoundButton != null)
+			{
+				SoundButton.image.sprite = _isSoundMuted ? SoundOffSprite : SoundOnSprite;
+			}
+			else 
+			{
 				Debug.LogError("Sound button is not assigned!");
+			}
 		}
 
 		void UpdateMusicButtonImage()
 		{
-			if (musicButton != null)
-				musicButton.image.sprite = isMusicMuted ? musicOffSprite : musicOnSprite;
+			if (MusicButton != null)
+			{
+				MusicButton.image.sprite = _isMusicMuted ? MusicOffSprite : MusicOnSprite;
+			}
 			else
+			{ 
 				Debug.LogError("Music button is not assigned!");
+			}
 		}
 	}
 }

@@ -14,6 +14,7 @@ namespace CircleAnimalsPuzzle.Systems
 
 		[SerializeField]
 		private List<HintObject> _displayedHints = new List<HintObject>();
+
 		public int HintsLeft => _hints.Count;
 
 		public void DisplayRandomHint()

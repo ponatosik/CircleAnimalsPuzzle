@@ -7,11 +7,10 @@ namespace CircleAnimalsPuzzle.Gameplay.Physics
 	[RequireComponent(typeof(Animator))]
 	public class ShakeOnCollision : MonoBehaviour
 	{
-		Animator _animator;
-
 		[SerializeField]
 		private string _soundOnCollision = "ThreeSound";
 
+		private Animator _animator;
 
 		private void Start()
 		{
@@ -21,7 +20,7 @@ namespace CircleAnimalsPuzzle.Gameplay.Physics
 		void OnCollisionEnter2D(Collision2D collision)
 		{
 			_animator.SetTrigger("Shake");
-			AudioManager.instance.PlaySound(_soundOnCollision);
+			AudioManager.Instance.PlaySound(_soundOnCollision);
 		}
 	}
 }

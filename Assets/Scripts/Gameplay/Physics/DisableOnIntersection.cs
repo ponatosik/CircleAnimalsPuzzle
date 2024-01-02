@@ -6,7 +6,6 @@ namespace CircleAnimalsPuzzle.Gameplay.Physics
 {
 	public class DisableOnIntersection : MonoBehaviour
 	{
-
 		[SerializeField]
 		private ObjectEffect _effect;
 		private Collider2D[] _colliders;

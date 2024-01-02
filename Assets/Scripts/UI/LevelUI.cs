@@ -2,12 +2,14 @@ using CircleAnimalsPuzzle.Gameplay;
 using CircleAnimalsPuzzle.Systems;
 using CircleAnimalsPuzzle.Visuals;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CircleAnimalsPuzzle.UI
 {
 	public class LevelUI : MonoBehaviour
 	{
-		[SerializeField] ObjectEffect finishMenuTransition;
+		[SerializeField]
+		private ObjectEffect _finishMenuTransition;
 
 		void Start()
 		{
@@ -32,7 +34,7 @@ namespace CircleAnimalsPuzzle.UI
 
 		private void OnLevelComplete(int completeWithStars)
 		{
-			finishMenuTransition.Activate();
+			_finishMenuTransition.Activate();
 			PlayStarsSound(completeWithStars);
 		}
 
@@ -42,7 +44,7 @@ namespace CircleAnimalsPuzzle.UI
 			if (soundName != null)
 			{
 				Debug.Log(soundName);
-				AudioManager.instance.PlaySound(soundName);
+				AudioManager.Instance.PlaySound(soundName);
 			}
 		}
 

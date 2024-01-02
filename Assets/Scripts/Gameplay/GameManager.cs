@@ -13,8 +13,8 @@ namespace CircleAnimalsPuzzle.Gameplay
 		public static event Action<int> OnLevelComplete;
 
 		public static bool LevelStarted { get; private set; }
-		private bool _levelCompleted;
 
+		private bool _levelCompleted;
 
 		[field: SerializeField]
 		public CollectablesCollection Collectables { get; private set; } = new();
