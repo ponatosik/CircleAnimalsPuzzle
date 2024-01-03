@@ -5031,7 +5031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Super fox game
+  m_text: Circle animals
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0793144cfb283d541bb6af3fb70f63cd, type: 2}
   m_sharedMaterial: {fileID: 5328016546833715512, guid: 0793144cfb283d541bb6af3fb70f63cd, type: 2}
@@ -5065,11 +5065,11 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: 1.28
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -5120,8 +5120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa5bf2cfde5a464ba98a6721268de66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_radius: 271.8
-  m_arcDegrees: 62.9
+  m_radius: 275
+  m_arcDegrees: 67.1
   m_angularOffset: -90
   m_maxDegreesPerLetter: 360
 --- !u!114 &995504477
