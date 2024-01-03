@@ -7,8 +7,10 @@ namespace CircleAnimalsPuzzle.UI
 {
 	public class MainMenuMusic : MonoBehaviour
 	{
-		public Slider _musicSlider;
-		public Slider _soundSlider;
+		[SerializeField]
+		private Slider _musicSlider;
+		[SerializeField]
+		private Slider _soundSlider;
 
 		void Start()
 		{

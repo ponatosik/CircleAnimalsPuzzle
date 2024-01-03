@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da24944f8e9d8ca4bbefcef39fef3803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollbar: {fileID: 480851453}
+  Scrollbar: {fileID: 480851455}
 --- !u!1 &183869423
 GameObject:
   m_ObjectHideFlags: 0
