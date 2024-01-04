@@ -28,7 +28,7 @@ namespace CircleAnimalsPuzzle.Utils
 			return true;
 		}
 
-
+#if UNITY_EDITOR
 		[MenuItem("Tools/Clear progress")]
 		public static void ClearApplicationFiles()
 		{
@@ -41,5 +41,6 @@ namespace CircleAnimalsPuzzle.Utils
 				File.Delete(path);
 			}
 		}
+#endif
 	}
 }
