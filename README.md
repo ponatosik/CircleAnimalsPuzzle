@@ -1,8 +1,9 @@
 # Circle animals puzzle
- ![image](\Assets\Import\AnimalsFarmAndPuzzlePack\Characters\x2\Fox_Avatar_Rounded@2x.png)
-| Genre: Casual physics-based puzzle
-| Game engine: Unity 2020.3.8f1
-| Target plaform: Android
+ ![Game logo](Assets/Import/AnimalsFarmAndPuzzlePack/Characters/x2/Fox_Avatar_Rounded@2x.png)
+
+    Genre: Casual physics-based puzzle
+    Game engine: Unity 2020.3.8f1
+    Target plaform: Android
  
 
 ### Game overview
